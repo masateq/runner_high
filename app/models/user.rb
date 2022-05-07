@@ -9,6 +9,12 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 30 }
+  validates :age, numericality: { in: 0..100 }, allow_nil: true
+  validates :weight, numericality: { in: 0..200 }, allow_nil: true
+  validates :target_distance, numericality: { in: 0..100 }, allow_nil: true
+  validates :target_hour, numericality: { in: 0..8 }, allow_nil: true
+  validates :target_minute, numericality: { in: 0..59 }, allow_nil: true
+  validates :target_second, numericality: { in: 0..59 }, allow_nil: true
 
   enum sex: { not_specified: 0, male: 1, female: 2 }
 end

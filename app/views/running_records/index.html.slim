@@ -1,0 +1,6 @@
+.row.col-12 
+  - @running_records.each do |running_record|
+    .card.mb-4.bg-light-dark 
+      .card-body 
+        h4.card-title
+          = link_to "Date: #{running_record.date}  Distance: #{running_record.running_distance} km", edit_running_record_path(running_record) 
