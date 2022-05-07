@@ -1,0 +1,19 @@
+.contaier
+  .row 
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 新規登録
+      = form_with model:@user, local: true do |f|
+        .form_group 
+          = f.label :name
+          = f.text_field :name, class: 'form_control'
+        .form_group 
+          = f.label :email
+          = f.text_field :email, class: 'form_control'
+        .form_group 
+          = f.label :password
+          = f.text_field :password, class: 'form_control'
+        .form_group 
+          = f.label :password_confirmation
+          = f.text_field :password_confirmation, class: 'form_control'
+        =f.submit '登録', class: 'btn btn-primary'
+      = link_to 'ログイン', login_path
