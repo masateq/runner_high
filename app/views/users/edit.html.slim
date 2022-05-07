@@ -1,0 +1,32 @@
+.container
+  .row
+    .mt-4.offset-lg-2
+
+      h1 ユーザー情報編集
+      = form_with model:@user, local: true do |f|
+        .form_group 
+          = f.label t('.name'), class: 'col-3'
+          = f.text_field :name, class: 'form_control'
+        .form_group 
+          = f.label t('.age'), class: 'col-3'
+          = f.text_field :age, class: 'form_control', placeholder: '0~100'
+        .form_check
+          = f.label t('.sex'), class: 'col-3'
+          = f.collection_radio_buttons :sex, User.sexes_i18n, :first, :last, class: 'form_check_label'
+        .form_group 
+          = f.label t('.weight'), class: 'col-3'
+          = f.text_field :weight, class: 'form_control', placeholder: '0~200'
+        .form_group 
+          = f.label t('.target_time'), class: 'col-3'
+          = f.text_field :target_distance, class: 'form_control', size: 5
+          |  km  
+          = f.text_field :target_hour, class: 'form_control', size: 5, placeholder: 'hh'
+          |  :  
+          = f.text_field :target_minute, class: 'form_control', size: 5, placeholder: 'mm'
+          |  :  
+          = f.text_field :target_second, class: 'form_control', size: 5, placeholder: 'ss'
+          
+          
+        = f.submit t('.registration'), class: 'btn btn-primary'
+
+= link_to 'トップページ', root_path
