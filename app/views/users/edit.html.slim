@@ -10,6 +10,9 @@
         .form_group 
           = f.label t('.age'), class: 'col-3'
           = f.text_field :age, class: 'form_control', placeholder: '0~100'
+        .form_check
+          = f.label t('.sex'), class: 'col-3'
+          = f.collection_radio_buttons :sex, User.sexes_i18n, :first, :last, class: 'form_check_label'
         .form_group 
           = f.label t('.weight'), class: 'col-3'
           = f.text_field :weight, class: 'form_control', placeholder: '0~200'

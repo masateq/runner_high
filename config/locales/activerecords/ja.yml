@@ -1,0 +1,44 @@
+ja:        
+  enums:
+    user:
+      sex:
+        not_specified: 指定なし
+        male: 男性
+        female: 女性
+    running_record:
+      intensity:
+        E: E
+        M: M
+        T: T
+        I: I
+        R: R
+        
+  activerecord:
+    models:
+      user: ユーザー
+      running_record: ランニング記録
+      training_suggestion: トレーニング提案
+
+    attributes:
+      user:
+        id: ID
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        age: 年齢
+        sex: 性別
+        weight: 体重
+        target_time: 目標タイム
+      running_record:
+        id: ID
+        date: 日付
+        time: タイム
+        distance: 距離
+        calorie: カロリー
+        vdot: VDOT
+      training_suggestion:
+        id: ID
+        distance: 距離
+        intensiry: 強度
+        vdot: VDOT
+        pace: ペース

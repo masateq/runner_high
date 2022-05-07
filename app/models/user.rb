@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 30 }
+
+  enum sex: { not_specified: 0, male: 1, female: 2 }
 end

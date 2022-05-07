@@ -1,0 +1,63 @@
+ja:
+  defaults:
+    login_fail: ログインしてください
+    
+  users:
+    new:
+      name: 名前
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード確認
+      registration: 登録
+      login: ログイン
+    create:
+      success: ユーザー登録が完了しました
+      fail: ユーザー登録に失敗しました
+    edit:
+      name: 名前
+      age: 年齢
+      sex: 性別
+      weight: 体重
+      target_time: 目標タイム
+      registration: 登録
+    update:
+      success: ユーザー情報を編集しました
+
+  user_sessions:
+    new:
+      login: ログイン
+      email: メールアドレス
+      password: パスワード
+      registration: ユーザー登録
+    create:
+      success: ログインしました
+      fail: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
+
+  top_pages:
+    top:
+      user_infomation: ユーザー情報
+      running_new: ランニング記録入力
+      running_index: ランニング記録一覧
+      training_suggestion: トレーニング提案画面
+
+  running_records:
+    new:
+      date: 実施日
+      time: タイム
+      running_distance: 走行距離
+      intensity: 練習強度
+      registration: 登録
+    create:
+      success: ランニング記録を作成しました
+      fail: ランニング記録作成に失敗しました
+    edit:
+      date: 実施日
+      time: タイム
+      running_distance: 走行距離
+      intensity: 練習強度
+      registration: 登録
+    update:
+      success: ランニング記録を編集しました
+      fail: ランニング記録の編集に失敗しました
