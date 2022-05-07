@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
   before_action :set_user, only: %i[edit update]
-  
+
   def new
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
-    if @user.save!
+    if @user.save
       redirect_to login_path
       flash[:success] = t(".success")
     else
