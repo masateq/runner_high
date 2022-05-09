@@ -1,6 +1,11 @@
 
-import jquery from "jquery"
-window.$ = window.jQuery = jquery
-import * as bootstrap from "bootstrap"
-window.bootstrap = bootstrap
-import "../stylesheets/application"
+import Rails from "@rails/ujs"
+import Turbolinks from "turbolinks"
+import * as ActiveStorage from "@rails/activestorage"
+import "channels"
+require('jquery')
+
+
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()
