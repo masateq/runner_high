@@ -4,6 +4,7 @@
 
       h1 ユーザー情報編集
       = form_with model:@user, local: true do |f|
+        = render 'shared/error_messages', object: f.object
         .form_group 
           = f.label t('.name'), class: 'col-3'
           = f.text_field :name, class: 'form_control'

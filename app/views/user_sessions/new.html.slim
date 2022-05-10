@@ -3,6 +3,7 @@
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2 
       h1 ログイン
       = form_with url: login_path, local: true do |f|
+        = render 'shared/error_messages', object: f.object
         .form_group 
           = f.label t('.email')
           = f.text_field :email, class: 'form_control'

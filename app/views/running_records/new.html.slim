@@ -4,6 +4,7 @@
 
       h1 ランニング記録入力
       = form_with model:@running_record, local: true do |f|
+        = render 'shared/error_messages', object: f.object
         .form_group 
           = f.label t('.date'), class: 'col-3'
           = f.date_select :date, selected: Date.today, class: 'form_control'
