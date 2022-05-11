@@ -32,9 +32,6 @@ gem 'html2slim', '~> 0.2.0'
 #login機能
 gem 'sorcery', '~> 0.16.3'
 
-# design
-gem 'bootstrap', '~> 5.1', '>= 5.1.3'
-
 # 日本語化
 gem 'rails-i18n', '~> 6.0.0'
 gem 'enum_help', '~> 0.0.17'
