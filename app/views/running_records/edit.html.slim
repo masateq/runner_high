@@ -22,6 +22,8 @@
         .form_group
           = f.label t('.intensity'), class: 'col-3'
           = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form_control'
+          = link_to '#', method: :get do
+            i.fa.fa-circle-question
 
         = f.submit t('.registration'), class: 'btn btn-primary'
 
