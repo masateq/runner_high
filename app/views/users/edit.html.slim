@@ -18,14 +18,14 @@
           = f.label t('.weight'), class: 'col-3'
           = f.text_field :weight, class: 'form_control', placeholder: '0~200'
         .form_group 
-          = f.label t('.target_time'), class: 'col-3'
-          = f.text_field :target_distance, class: 'form_control', size: 5
+          = f.label t('.running_time'), class: 'col-3'
+          = f.text_field :running_distance, class: 'form_control', size: 5
           |  km  
-          = f.text_field :target_hour, class: 'form_control', size: 5, placeholder: 'hh'
+          = f.text_field :running_hour, class: 'form_control', size: 5, placeholder: 'hh'
           |  :  
-          = f.text_field :target_minute, class: 'form_control', size: 5, placeholder: 'mm'
+          = f.text_field :running_minute, class: 'form_control', size: 5, placeholder: 'mm'
           |  :  
-          = f.text_field :target_second, class: 'form_control', size: 5, placeholder: 'ss'
+          = f.text_field :running_second, class: 'form_control', size: 5, placeholder: 'ss'
           
           
         = f.submit t('.registration'), class: 'btn btn-primary'
