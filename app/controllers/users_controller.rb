@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def user_update_params
-    params.require(:user).permit(:name, :age, :sex, :weight, :target_hour, :target_minute, :target_second, :target_distance)
+    params.require(:user).permit(:name, :age, :sex, :weight, :running_hour, :running_minute, :running_second, :running_distance)
   end
 
   def set_user

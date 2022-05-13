@@ -18,7 +18,7 @@ ja:
       age: 年齢
       sex: 性別
       weight: 体重
-      target_time: 目標タイム
+      running_time: 目標タイム
       registration: 登録
     update:
       success: ユーザー情報を編集しました
