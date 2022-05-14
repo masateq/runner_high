@@ -26,6 +26,7 @@ class TrainingSuggestion < ApplicationRecord
     "#{min}:#{sec} / km"
   end
 
+  # 総ランニング時間の導出
   def pace_time
     time = (1000 / velocity) * self.running_distance  # 総ランニング時間(minを小数で)
     hour = (time / 60).floor.to_i                     # 総ランニング時間(hourだけ)
@@ -34,6 +35,7 @@ class TrainingSuggestion < ApplicationRecord
     "#{hour}:#{min}:#{sec}"
   end
 
+  # 消費カロリーの導出
   def calorie
     time = (1000 / velocity) * self.running_distance                                            # 総ランニング時間(minを小数で)
     mets = self.user.vdot * percent / 3.5                                                       # mets導出
