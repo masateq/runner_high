@@ -7,8 +7,10 @@
         thead 
           tr 
             th scope='col' day 
+            th scope='col' 走行距離
         tbody 
           tr 
             td = l @training_suggestion.created_at, format: :day
+            td = @training_suggestion.running_distance
 
 = link_to 'トップページ', root_path
