@@ -1,0 +1,2 @@
+module TrainingSuggestionsHelper
+end
