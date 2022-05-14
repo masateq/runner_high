@@ -17,12 +17,13 @@
           th scope='col' vdot
           td = @training_suggestion.user.vdot.round(2)
         tr 
-          th scope='col' タイム
-
-        tr 
           th scope='col' ペース
-
+          td = @training_suggestion.pace
+        tr 
+          th scope='col' タイム
+          td = @training_suggestion.pace_time
         tr
           th scope='col' 推定消費カロリー
+          td = @training_suggestion.calorie
         
 = link_to 'トップページ', root_path
