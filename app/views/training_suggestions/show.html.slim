@@ -1,0 +1,14 @@
+.container
+  .row
+    .mt-4.offset-lg-2
+
+      h1 トレーニングメニュー
+      table.table 
+        thead 
+          tr 
+            th scope='col' day 
+        tbody 
+          tr 
+            td = @training_suggestion.created_at
+
+= link_to 'トップページ', root_path
