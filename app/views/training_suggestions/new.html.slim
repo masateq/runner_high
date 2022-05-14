@@ -2,7 +2,8 @@
   .row
     .mt-4.offset-lg-2
 
-      h1 ランニング記録入力
+      h1 トレーニングメニュー作成画面
+      p ランニング予定を入力してください
       = form_with model:@training_suggestion, local: true do |f|
         = render 'shared/error_messages', object: f.object
         
@@ -13,6 +14,8 @@
         .form_group
           = f.label t('.intensity'), class: 'col-3'
           = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form_control'
+          = link_to '#', method: :get do
+            i.fa.fa-circle-question
 
         = f.submit t('.registration'), class: 'btn btn-primary'
 
