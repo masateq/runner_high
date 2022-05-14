@@ -5,15 +5,15 @@ class TrainingSuggestion < ApplicationRecord
   # 練習強度(intensity)ごとにランニング時のVO2maxに対する負荷の比率を定義
   def percent
     case self.intensity.to_f
-    when 0
+    when 0  # E
       0.66
-    when 1
+    when 1  # M
       0.815
-    when 2
+    when 2  # T
       0.875
-    when 3
+    when 3  # I
       97.5
-    when 4
+    when 4  # R
       107
     end
   end
