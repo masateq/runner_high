@@ -12,6 +12,13 @@ ja:
         T: T
         I: I
         R: R
+    training_suggestion:
+      intensity:
+        E: E
+        M: M
+        T: T
+        I: I
+        R: R
         
   activerecord:
     models:
