@@ -60,3 +60,7 @@ ja:
         intensiry: 強度
         vdot: VDOT
         pace: ペース
+  
+  time:
+    formats:
+      day: '%Y/%m/%d' 

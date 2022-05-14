@@ -9,6 +9,6 @@
             th scope='col' day 
         tbody 
           tr 
-            td = @training_suggestion.created_at
+            td = l @training_suggestion.created_at, format: :day
 
 = link_to 'トップページ', root_path
