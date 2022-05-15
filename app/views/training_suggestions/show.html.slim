@@ -1,0 +1,29 @@
+.container
+  .row
+    .mt-4.offset-lg-2
+
+      h1 トレーニングメニュー
+      table.table 
+        tr
+          th scope='col' day
+          td = l @training_suggestion.created_at, format: :day
+        tr 
+          th scope='col' 走行距離
+          td = @training_suggestion.running_distance
+        tr 
+          th scope='col' 練習強度
+          td = @training_suggestion.intensity_i18n
+        tr 
+          th scope='col' vdot
+          td = @training_suggestion.user.vdot.round(2)
+        tr 
+          th scope='col' ペース
+          td = @training_suggestion.pace
+        tr 
+          th scope='col' タイム
+          td = @training_suggestion.pace_time
+        tr
+          th scope='col' 推定消費カロリー
+          td = @training_suggestion.calorie
+        
+= link_to 'トップページ', root_path

@@ -12,6 +12,13 @@ ja:
         T: T
         I: I
         R: R
+    training_suggestion:
+      intensity:
+        E: E
+        M: M
+        T: T
+        I: I
+        R: R
         
   activerecord:
     models:
@@ -60,3 +67,7 @@ ja:
         intensiry: 強度
         vdot: VDOT
         pace: ペース
+  
+  time:
+    formats:
+      day: '%Y/%m/%d' 
