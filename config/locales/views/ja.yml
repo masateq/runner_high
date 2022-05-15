@@ -41,6 +41,7 @@ ja:
       running_new: ランニング記録入力
       running_index: ランニング記録一覧
       training_suggestion: トレーニング提案画面
+      edit_training_suggestion: トレーニング提案画面編集
 
   running_records:
     new:
@@ -70,3 +71,10 @@ ja:
     create:
       success: トレーニングメニューを作成しました
       fail: トレーニングメニュー作成に失敗しました
+    edit:
+      running_distance: 走行距離
+      intensity: 練習強度
+      registration: メニュー編集
+    update:
+      success: トレーニングメニューを変更しました
+      fail: トレーニングメニュー変更に失敗しました 

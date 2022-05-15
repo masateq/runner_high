@@ -19,6 +19,21 @@ class TrainingSuggestionsController < ApplicationController
     @training_suggestion = current_user.training_suggestions.find(params[:id])
   end
 
+  def edit
+    @training_suggestion = current_user.training_suggestions.find(params[:id])
+  end
+
+  def update
+    @training_suggestion = current_user.training_suggestions.find(params[:id])
+    if @training_suggestion.update(training_suggestion_params)
+      redirect_to training_suggestion_path(@training_suggestion)
+      flash[:success] = t('.success')
+    else
+      flash.now[:danger] = t('.fail')
+      render :edit
+    end
+  end
+
   private
 
   def training_suggestion_params
