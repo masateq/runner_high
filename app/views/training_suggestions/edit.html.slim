@@ -18,5 +18,11 @@
             i.fa.fa-circle-question
 
         = f.submit t('.registration'), class: 'btn btn-primary'
+      
+      table.table 
+        tr 
+          th scope='col' vdot
+          td = @training_suggestion.user.vdot.round(2)
+
 
 = link_to 'トップページ', root_path

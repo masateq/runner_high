@@ -12,18 +12,18 @@ class TrainingSuggestion < ApplicationRecord
     when 2  # T
       0.875
     when 3  # I
-      97.5
+      0.975
     when 4  # R
-      107
+      1.07
     end
   end
 
   # 1kmあたりのペース導出
   def pace
-    time = 1000 / velocity            # 1kmあたりランニング時間(minを小数で)
-    min = time.floor.to_i             # 1kmあたりランニング時間(minだけ)
-    sec = ((time - min) * 60).to_i    # 1kmあたりランニング時間(secondだけ)
-    "#{min}:#{sec} / km"
+    time = 1000 / velocity              # 1kmあたりランニング時間(minを小数で)
+    min = time.floor.to_i               # 1kmあたりランニング時間(minだけ)
+    sec = ((time - min) * 60).to_i      # 1kmあたりランニング時間(secondだけ)
+    format("%02d:%02d / km", min, sec)
   end
 
   # 総ランニング時間の導出
@@ -32,7 +32,7 @@ class TrainingSuggestion < ApplicationRecord
     hour = (time / 60).floor.to_i                     # 総ランニング時間(hourだけ)
     min = (time - hour * 60).floor.to_i               # 総ランニング時間(minだけ)
     sec = ((time - hour * 60 - min) * 60).to_i        # 総ランニング時間(secondだけ)
-    "#{hour}:#{min}:#{sec}"
+    format("%01d:%02d:%02d", hour, min, sec)
   end
 
   # 消費カロリーの導出
