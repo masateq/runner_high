@@ -4,20 +4,12 @@ ja:
     
   users:
     new:
-      name: 名前
-      email: メールアドレス
-      password: パスワード
-      password_confirmation: パスワード確認
       registration: 登録
       login: ログイン
     create:
       success: ユーザー登録が完了しました
       fail: ユーザー登録に失敗しました
     edit:
-      name: 名前
-      age: 年齢
-      sex: 性別
-      weight: 体重
       running_time: 目標タイム
       registration: 登録
     update:
@@ -45,35 +37,23 @@ ja:
 
   running_records:
     new:
-      date: 実施日
-      time: タイム
-      running_distance: 走行距離
-      intensity: 練習強度
       registration: 登録
     create:
       success: ランニング記録を作成しました
       fail: ランニング記録作成に失敗しました
     edit:
-      date: 実施日
-      time: タイム
-      running_distance: 走行距離
-      intensity: 練習強度
-      registration: 登録
+      registration: 編集
     update:
       success: ランニング記録を編集しました
       fail: ランニング記録の編集に失敗しました
 
   training_suggestions:
     new:
-      running_distance: 走行距離
-      intensity: 練習強度
       registration: メニュー作成
     create:
       success: トレーニングメニューを作成しました
       fail: トレーニングメニュー作成に失敗しました
     edit:
-      running_distance: 走行距離
-      intensity: 練習強度
       registration: メニュー編集
     update:
       success: トレーニングメニューを変更しました

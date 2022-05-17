@@ -1,7 +1,6 @@
-.container
-  .row
-    .mt-4.offset-lg-2
-
+.container-fluid
+  .row.justify-content-center
+    .col-8
       h1 トレーニングメニュー
       table.table 
         tr
@@ -27,3 +26,4 @@
           td = @training_suggestion.calorie
         
 = link_to 'トップページ', root_path
+= link_to 'トレーニング編集画面', edit_training_suggestion_path(@training_suggestion)

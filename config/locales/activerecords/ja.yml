@@ -54,17 +54,17 @@ ja:
         id: ID
         date: 日付
         time: タイム
-        distance: 距離
         calorie: カロリー
         vdot: VDOT
         running_distance: 走行距離
+        intensity: 練習強度
         running_hour: hour
         running_minute: minute
         running_socond: second
       training_suggestion:
         id: ID
-        distance: 距離
-        intensiry: 強度
+        running_distance: 走行距離
+        intensity: 練習強度
         vdot: VDOT
         pace: ペース
   
