@@ -4,21 +4,21 @@
       h1 ランニング記録入力
       = form_with model:@running_record, local: true do |f|
         = render 'shared/error_messages', object: f.object
-        .form_group 
+        .mb-3
           = f.label :date, class: 'col-2'
           = f.date_select :date, selected: Date.today, class: 'form_control'
-        .form_group 
+        .mb-3 
           = f.label :time, class: 'col-2'
           = f.text_field :running_hour, class: 'form_control', size: 5, placeholder: 'hh'
           |  :  
           = f.text_field :running_minute, class: 'form_control', size: 5, placeholder: 'mm'
           |  :  
           = f.text_field :running_second, class: 'form_control', size: 5, placeholder: 'ss'
-        .form_group 
+        .mb-3 
           = f.label :running_distance, class: 'col-2'
           = f.text_field :running_distance, class: 'form_control'
           |  km
-        .form_group
+        .mb-3
           = f.label :intensity, class: 'col-2'
           = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form_control'
           = link_to '#', method: :get do
