@@ -1,17 +1,16 @@
-.container
-  .row
-    .mt-4.offset-lg-2
-
+.container-fluid
+  .row.justify-content-center
+    .col-6
       h1 トレーニングメニュー作成画面
       p ランニング予定を入力してください
       = form_with model:@training_suggestion, local: true do |f|
         = render 'shared/error_messages', object: f.object
         
-        .form_group 
+        .mb-3
           = f.label :running_distance, class: 'col-3'
           = f.text_field :running_distance, class: 'form_control'
           |  km
-        .form_group
+        .mb-3
           = f.label :intensity, class: 'col-3'
           = f.select :intensity, TrainingSuggestion.intensities_i18n.invert, class: 'form_control'
           = link_to '#', method: :get do
