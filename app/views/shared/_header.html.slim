@@ -1,3 +1,10 @@
-header
-  nav.navbar.navbar-expand-lg.navbar-light.bg-light.d-flex.justify-content-end
-    = link_to 'logout', logout_path, class: 'navbar-brand', method: :delete
+header#header
+  h1
+    = link_to root_path do
+      i.fa-solid.fa-person-running.fa-2x style="color: white;"
+  nav 
+    ul#g-navi 
+      li =link_to 'logout', logout_path, method: :delete
+          
+    = javascript_pack_tag 'header', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'header', 'data-turbolinks-track': 'reload'
