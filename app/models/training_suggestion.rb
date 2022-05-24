@@ -1,5 +1,7 @@
 class TrainingSuggestion < ApplicationRecord
   belongs_to :user
+
+  validates :running_distance, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, presence: true
   enum intensity: { E: 0, M: 1, T: 2, I: 3, R: 4 }
 
   # 練習強度(intensity)ごとにランニング時のVO2maxに対する負荷の比率を定義
