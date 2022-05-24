@@ -1,6 +1,7 @@
 ja:
   defaults:
     login_fail: ログインしてください
+    login: ログインしています
     
   users:
     new:
