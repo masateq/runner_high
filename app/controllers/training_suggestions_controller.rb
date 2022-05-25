@@ -17,6 +17,12 @@ class TrainingSuggestionsController < ApplicationController
 
   def show
     @training_suggestion = TrainingSuggestion.find(params[:id])
+    if current_user == @training_suggestion.user
+      render :show
+    else
+      flash[:danger] = t('defaults.unpermitted')
+      redirect_to root_path
+    end
   end
 
   def edit
