@@ -9,7 +9,7 @@ class RunningRecordsController < ApplicationController
   end
 
   def create
-    @running_record = current_user.running_records.build(running_record_params)
+    @running_record = RunningRecord.build(running_record_params)
     if @running_record.save
       redirect_to running_records_path
       flash[:success] = t(".success")
@@ -21,11 +21,17 @@ class RunningRecordsController < ApplicationController
   end
 
   def edit
-    @running_record = current_user.running_records.find(params[:id])
+    @running_record = RunningRecord.find(params[:id])
+    if current_user == @running_record.user
+      render :edit
+    else
+      flash[:danger] = t('defaults.unpermitted')
+      redirect_to root_path
+    end
   end
 
   def update
-    @running_record = current_user.running_records.find(params[:id])
+    @running_record = RunningRecord.find(params[:id])
     if @running_record.update(running_record_params)
       redirect_to running_records_path
       flash[:success] = t('.success')

@@ -19,6 +19,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user == User.find(params[:id])
+      render :edit
+    else
+      flash[:danger] = t('defaults.unpermitted')
+      redirect_to root_path
+    end
   end
 
   def update
@@ -42,6 +48,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(current_user.id)
+    @user = current_user
   end
 end
