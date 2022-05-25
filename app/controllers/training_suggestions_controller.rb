@@ -4,7 +4,7 @@ class TrainingSuggestionsController < ApplicationController
   end
 
   def create
-    @training_suggestion = current_user.training_suggestions.build(training_suggestion_params)
+    @training_suggestion = TrainingSuggestion.build(training_suggestion_params)
     if @training_suggestion.save
       redirect_to training_suggestion_path(@training_suggestion)
       flash[:success] = t(".success")
@@ -16,15 +16,27 @@ class TrainingSuggestionsController < ApplicationController
   end
 
   def show
-    @training_suggestion = current_user.training_suggestions.find(params[:id])
+    @training_suggestion = TrainingSuggestion.find(params[:id])
+    if current_user == @training_suggestion.user
+      render :show
+    else
+      flash[:danger] = t('defaults.unpermitted')
+      redirect_to root_path
+    end
   end
 
   def edit
-    @training_suggestion = current_user.training_suggestions.find(params[:id])
+    @training_suggestion = TrainingSuggestion.find(params[:id])
+    if current_user == @training_suggestion.user
+      render :edit
+    else
+      flash[:danger] = t('defaults.unpermitted')
+      redirect_to root_path
+    end
   end
 
   def update
-    @training_suggestion = current_user.training_suggestions.find(params[:id])
+    @training_suggestion = TrainingSuggestion.find(params[:id])
     if @training_suggestion.update(training_suggestion_params)
       redirect_to training_suggestion_path(@training_suggestion)
       flash[:success] = t('.success')

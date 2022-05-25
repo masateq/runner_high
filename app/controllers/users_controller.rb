@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  before_action :forbid_login_user, only: %i[new]
   before_action :set_user, only: %i[edit update]
 
   def new
@@ -18,6 +19,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user == User.find(params[:id])
+      render :edit
+    else
+      flash[:danger] = t('defaults.unpermitted')
+      redirect_to root_path
+    end
   end
 
   def update
@@ -41,6 +48,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(current_user.id)
+    @user = current_user
   end
 end

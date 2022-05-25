@@ -1,6 +1,8 @@
 ja:
   defaults:
     login_fail: ログインしてください
+    login: ログインしています
+    unpermitted: 許可されていないページです
     
   users:
     new:
