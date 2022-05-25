@@ -6,12 +6,14 @@ ja:
     
   users:
     new:
+      new_user: 新規登録
       registration: 登録
       login: ログイン
     create:
       success: ユーザー登録が完了しました
       fail: ユーザー登録に失敗しました
     edit:
+      edit_user: ユーザー編集
       running_time: 目標タイム
       registration: 登録
     update:
@@ -31,6 +33,7 @@ ja:
 
   top_pages:
     top:
+      top: トップページ
       user_infomation: ユーザー情報
       running_new: ランニング記録入力
       running_index: ランニング記録一覧
@@ -39,24 +42,32 @@ ja:
 
   running_records:
     new:
+      new_record: トレーニング記録入力
       registration: 登録
     create:
       success: ランニング記録を作成しました
       fail: ランニング記録作成に失敗しました
     edit:
+      edit_record: ランニング記録編集
       registration: 編集
     update:
       success: ランニング記録を編集しました
       fail: ランニング記録の編集に失敗しました
+    index:
+      index_record: トレーニング記録一覧
 
   training_suggestions:
     new:
+      new_training: トレーニング新規作成
       registration: メニュー作成
     create:
       success: トレーニングメニューを作成しました
       fail: トレーニングメニュー作成に失敗しました
     edit:
+      edit_training: トレーニング編集
       registration: メニュー編集
     update:
       success: トレーニングメニューを変更しました
       fail: トレーニングメニュー変更に失敗しました 
+    show:
+      show_training: トレーニング詳細画面

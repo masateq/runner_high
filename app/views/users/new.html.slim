@@ -1,7 +1,8 @@
+- content_for(:title, t('.new_user'))
 .container-fluid
   .row.justify-content-center
     .col-6
-      h1 新規登録
+      h1 = t('.new_user')
       = form_with model:@user, local: true do |f|
         = render 'shared/error_messages', object: f.object
         .mb-3

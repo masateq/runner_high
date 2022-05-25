@@ -1,7 +1,8 @@
+- content_for(:title, t('.edit_training'))
 .container-fluid
   .row.justify-content-center
     .col-6
-      h1 トレーニングメニュー編集画面
+      h1 = t('.edit_training')
       p ランニング予定を入力してください
       = form_with model:@training_suggestion, local: true do |f|
         = render 'shared/error_messages', object: f.object
