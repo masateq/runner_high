@@ -1,4 +1,5 @@
 class RunningRecordsController < ApplicationController
+  before_action :set_running_record, only: %i[edit update]
 
   def new
     @running_record = RunningRecord.new
@@ -9,7 +10,7 @@ class RunningRecordsController < ApplicationController
   end
 
   def create
-    @running_record = RunningRecord.build(running_record_params)
+    @running_record = current_user.running_records.build(running_record_params)
     if @running_record.save
       redirect_to running_records_path
       flash[:success] = t(".success")
@@ -21,7 +22,6 @@ class RunningRecordsController < ApplicationController
   end
 
   def edit
-    @running_record = RunningRecord.find(params[:id])
     if current_user == @running_record.user
       render :edit
     else
@@ -31,7 +31,6 @@ class RunningRecordsController < ApplicationController
   end
 
   def update
-    @running_record = RunningRecord.find(params[:id])
     if @running_record.update(running_record_params)
       redirect_to running_records_path
       flash[:success] = t('.success')
@@ -45,6 +44,10 @@ class RunningRecordsController < ApplicationController
 
   def running_record_params
     params.require(:running_record).permit(:date, :running_hour, :running_minute, :running_second, :running_distance, :intensity)
+  end
+
+  def set_running_record
+    @running_record = current_user.running_records.find(params[:id])
   end
   
 end
