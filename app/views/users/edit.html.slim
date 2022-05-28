@@ -4,7 +4,6 @@
     .col-6
       h1 = t('.edit_user')
       = form_with model:@user, local: true do |f|
-        = render 'shared/error_messages', object: f.object
         .mb-3
           = f.label :name, class: 'col-3'
           = f.text_field :name, class: 'form_control'
