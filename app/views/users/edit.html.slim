@@ -5,11 +5,11 @@
     = form_with model:@user, local: true do |f|
       .row.mb-3
         = f.label :name, class: 'col-form-label col-sm-3'
-        .col-sm-9
+        .col-sm-4
           = f.text_field :name, class: 'form-control'
       .row.mb-3
         = f.label :age, class: 'col-form-label col-sm-3'
-        .col-sm-9
+        .col-sm-2
           = f.text_field :age, class: 'form-control', placeholder: '0~100'
       .row.mb-3
         = f.label :sex, class: 'col-form-label col-sm-3'
@@ -17,18 +17,19 @@
           = f.collection_radio_buttons :sex, User.sexes_i18n, :first, :last, class: 'form_check_label'
       .row.mb-3 
         = f.label :weight, class: 'col-form-label col-sm-3'
-        .col-sm-9
+        .col-sm-2
           = f.text_field :weight, class: 'form-control', placeholder: '0~200'
       .row.mb-3
-        = f.label t('.running_time'), class: 'col-form-label col-sm-3'
-        .col-sm-4.d-flex
+        = f.label t('.running_time'), class: 'col-form-label col-md-3'
+        .col-md-5.d-flex
           = f.text_field :running_distance, class: 'form-control'
           |  km  
           = f.text_field :running_hour, class: 'form-control', placeholder: 'hh'
-          |  :  
+          |  時間
           = f.text_field :running_minute, class: 'form-control', placeholder: 'mm'
-          |  :  
-          = f.text_field :running_second, class: 'form-control', placeholder: 'ss'            
+          |  分
+          = f.text_field :running_second, class: 'form-control', placeholder: 'ss' 
+          |  秒           
           
       = f.submit t('.registration'), class: 'btn btn-primary'
 
