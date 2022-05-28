@@ -1,29 +1,32 @@
 - content_for(:title, t('.edit_record'))
 .container-fluid
-  .row.justify-content-center
-    .col-4
-      h1 = t('.edit_record')
-      = form_with model:@running_record, local: true do |f|
-        .mb-3
-          = f.label :date, class: 'col-2'
-          = f.date_select :date, {include_blank: true, use_month_numbers: true}, class: 'form_control'
-        .mb-3 
-          = f.label :time, class: 'col-2'
-          = f.text_field :running_hour, class: 'form_control', size: 5, placeholder: 'hh'
+  .justify-content-center
+    h1 = t('.edit_record')
+    = form_with model:@running_record, local: true do |f|
+      .row.mb-3
+        = f.label :date, class: 'col-form-label col-sm-3'
+        .col-sm-9
+          = f.date_select :date, class: 'form-control'
+      .row.mb-3
+        = f.label :time, class: 'col-form-label col-sm-3'
+        .col-sm-9.d-flex
+          = f.text_field :running_hour, class: 'form-control', size: 5, placeholder: 'hh'
           |  :  
-          = f.text_field :running_minute, class: 'form_control', size: 5, placeholder: 'mm'
+          = f.text_field :running_minute, class: 'form-control', size: 5, placeholder: 'mm'
           |  :  
-          = f.text_field :running_second, class: 'form_control', size: 5, placeholder: 'ss'
-        .mb-3
-          = f.label :running_distance, class: 'col-2'
-          = f.text_field :running_distance, class: 'form_control'
+          = f.text_field :running_second, class: 'form-control', size: 5, placeholder: 'ss'
+      .row.mb-3
+        = f.label :running_distance, class: 'col-form-label col-sm-3'
+        .col-sm-9.d-flex
+          = f.text_field :running_distance, class: 'form-control'
           |  km
-        .mb-3
-          = f.label :intensity, class: 'col-2'
-          = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form_control'
+      .row.mb-3
+        = f.label :intensity, class: 'col-form-label col-sm-3'
+        .col-sm-9
+          = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-control'
           = link_to '#', method: :get do
             i.fa.fa-circle-question
 
-        = f.submit t('.registration'), class: 'btn btn-primary'
+      = f.submit t('.registration'), class: 'btn btn-primary'
 
 = link_to 'トップページ', root_path

@@ -1,20 +1,23 @@
 - content_for(:title, t('.new_user'))
 .container-fluid
-  .row.justify-content-center
-    .col-6
-      h1 = t('.new_user')
-      = form_with model:@user, local: true do |f|
-        .mb-3
-          = f.label :name, class: 'col-4'
-          = f.text_field :name, class: 'form_control'
-        .mb-3
-          = f.label :email, class: 'col-4'
-          = f.text_field :email, class: 'form_control'
-        .mb-3
-          = f.label :password, class: 'col-4'
-          = f.password_field :password, class: 'form_control'
-        .mb-3 
-          = f.label :password_confirmation, class: 'col-4'
-          = f.password_field :password_confirmation, class: 'form_control'
-        =f.submit '登録', class: 'btn btn-primary'
-      = link_to 'ログイン', login_path
+  .justify-content-center
+    h1 = t('.new_user')
+    = form_with model:@user, local: true do |f|
+      .row.mb-3
+        = f.label :name, class: 'col-form-label col-sm-3'
+        .col-sm-9
+          = f.text_field :name, class: 'form-control'
+      .row.mb-3
+        = f.label :email, class: 'col-form-label col-sm-3'
+        .col-sm-9
+          = f.text_field :email, class: 'form-control'
+      .row.mb-3
+        = f.label :password, class: 'col-form-label col-sm-3'
+        .col-sm-9
+          = f.password_field :password, class: 'form-control'
+      .row.mb-3 
+        = f.label :password_confirmation, class: 'col-form-label col-sm-3'
+        .col-sm-9
+          = f.password_field :password_confirmation, class: 'form-control'
+      =f.submit '登録', class: 'btn btn-primary'
+    = link_to 'ログイン', login_path
