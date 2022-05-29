@@ -1,12 +1,14 @@
 class TrainingSuggestionsController < ApplicationController
+  before_action :set_training_user, only: %i[show edit update]
+  
   def new
     @training_suggestion = TrainingSuggestion.new
   end
 
   def create
-    @training_suggestion = TrainingSuggestion.build(training_suggestion_params)
+    @training_suggestion = current_user.training_suggestions.build(training_suggestion_params)
     if @training_suggestion.save
-      redirect_to training_suggestion_path(@training_suggestion)
+      redirect_to training_suggestions_path
       flash[:success] = t(".success")
     else
       flash.now[:danger] = t(".fail")
@@ -16,8 +18,7 @@ class TrainingSuggestionsController < ApplicationController
   end
 
   def show
-    @training_suggestion = TrainingSuggestion.find(params[:id])
-    if current_user == @training_suggestion.user
+    if @training_suggestion
       render :show
     else
       flash[:danger] = t('defaults.unpermitted')
@@ -26,8 +27,7 @@ class TrainingSuggestionsController < ApplicationController
   end
 
   def edit
-    @training_suggestion = TrainingSuggestion.find(params[:id])
-    if current_user == @training_suggestion.user
+    if @training_suggestion
       render :edit
     else
       flash[:danger] = t('defaults.unpermitted')
@@ -36,9 +36,8 @@ class TrainingSuggestionsController < ApplicationController
   end
 
   def update
-    @training_suggestion = TrainingSuggestion.find(params[:id])
     if @training_suggestion.update(training_suggestion_params)
-      redirect_to training_suggestion_path(@training_suggestion)
+      redirect_to training_suggestions_path
       flash[:success] = t('.success')
     else
       flash.now[:danger] = t('.fail')
@@ -50,5 +49,9 @@ class TrainingSuggestionsController < ApplicationController
 
   def training_suggestion_params
     params.require(:training_suggestion).permit(:running_distance, :intensity)
+  end
+
+  def set_training_user
+    @training_suggestion = TrainingSuggestion.find_by(user_id: current_user.id)
   end
 end

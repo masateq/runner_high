@@ -3,7 +3,7 @@
   .justify-content-center
     h1 = t('.new_training')
     p ランニング予定を入力してください
-    = form_with model:@training_suggestion, local: true do |f|    
+    = form_with model: @training_suggestion, local: true do |f|
       .row.mb-3
         = f.label :running_distance, class: 'col-form-label col-sm-3'
         .col-sm-2.d-flex
