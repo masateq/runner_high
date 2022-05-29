@@ -2,11 +2,12 @@
 .container-fluid
   .justify-content-center
     h1 = t('.edit_record')
-    = form_with model:@running_record, local: true do |f|
+    = form_with model: @running_record, local: true do |f|
       .row.mb-3
         = f.label :date, class: 'col-form-label col-sm-3'
         .col-sm-9
-          = f.date_select :date, {use_month_numbers: true}, {class: 'form-control', style: 'display: inline-block;width: auto;'} 
+          = f.date_select :date, { use_month_numbers: true },\
+           { class: 'form-control', style: 'display: inline-block;width: auto;' }
       .row.mb-3
         = f.label :time, class: 'col-form-label col-sm-3'
         .col-sm-4.d-flex
