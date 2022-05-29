@@ -3,7 +3,7 @@
   .justify-content-center
       h1 = t('.edit_training')
       p ランニング予定を入力してください
-      = form_with model:@training_suggestion, local: true do |f|
+      = form_with  model: @training_suggestion, url: training_suggestions_path, local: true do |f|
         .row.mb-3
           = f.label :running_distance, class: 'col-form-label col-sm-3'
           .col-sm-2.d-flex
@@ -17,11 +17,11 @@
               i.fa.fa-circle-question
 
         = f.submit t('.registration'), class: 'btn btn-primary'
-      
-      table.table 
-        tr 
-          th scope='col' vdot
-          td = @training_suggestion.user.vdot.round(2)
 
+      - if @training_suggestion.user.vdot
+        table.table
+          tr
+            th scope='col' vdot
+            td = @training_suggestion.user.vdot.round(2)
 
 = link_to 'トップページ', root_path
