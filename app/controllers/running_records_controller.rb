@@ -6,7 +6,7 @@ class RunningRecordsController < ApplicationController
   end
 
   def index
-    @running_records = RunningRecord.all.order(created_at: :desc)
+    @running_records = current_user.running_records.order(created_at: :desc)
   end
 
   def create
