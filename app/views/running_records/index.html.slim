@@ -6,3 +6,9 @@
         h4.card-title
           = link_to "Date: #{running_record.date}  Distance: #{running_record.running_distance} km",\
            edit_running_record_path(running_record) 
+
+canvas#myChart
+
+button#btn type='button' グラフを更新
+
+= javascript_pack_tag 'chart', 'data-turbolinks-track': 'reload'

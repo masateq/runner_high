@@ -1,0 +1,1 @@
+require('jquery/chart.js')
