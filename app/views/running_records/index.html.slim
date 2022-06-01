@@ -8,14 +8,18 @@
            edit_running_record_path(running_record) 
 
 canvas#myChart
-a.btn.bgleft href='#' 
-  span 1ヶ月
-a.btn.bgleft href='#' 
-  span 3ヶ月
-a.btn.bgleft href='#' 
-  span 6ヶ月
-a.btn.bgleft href='#' 
-  span 年   
+a
+  #one_month.btn.bgleft href='#'
+    span 1ヶ月
+a
+  #three_months.btn.bgleft href='#' 
+    span 3ヶ月
+a
+  #six_months.btn.bgleft href='#' 
+    span 6ヶ月
+a
+  #one_year.btn.bgleft href='#' 
+    span 年   
 
 = javascript_pack_tag 'chart', 'data-turbolinks-track': 'reload'
 = javascript_pack_tag 'button', 'data-turbolinks-track': 'reload'
