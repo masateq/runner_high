@@ -6,7 +6,13 @@ class RunningRecordsController < ApplicationController
   end
 
   def index
-    @running_records = current_user.running_records.order(created_at: :desc)
+    @running_records = current_user.running_records.order(date: :desc)
+    gon.vdot = []
+    gon.date = []
+    @running_records.each do |running_record|
+      gon.vdot << running_record.vdot
+      gon.date << running_record.date
+    end
   end
 
   def create
@@ -22,6 +28,7 @@ class RunningRecordsController < ApplicationController
   end
 
   def edit
+    gon.user = @running_record.user
     if current_user == @running_record.user
       render :edit
     else
