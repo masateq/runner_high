@@ -36,6 +36,9 @@ gem 'sorcery', '~> 0.16.3'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'enum_help', '~> 0.0.17'
 
+# railsの変数をjsへ渡す
+gem 'gon', '~> 6.4'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

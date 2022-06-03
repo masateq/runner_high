@@ -1,0 +1,44 @@
+.btn{
+  position: relative;
+  overflow: hidden;
+
+  text-decoration: none;
+  display: inline-block;
+
+  border: 1px solid #555;
+  padding: 10px 30px;
+  text-align: center;
+  outline: none;
+
+  transition: ease .2s;
+}
+
+.btn span{
+  position: relative;
+  z-index: 3;
+  color:#333;
+}
+
+.btn:hover span{
+  color:#fff;
+}
+
+.bgleft:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background:#333;
+  width: 100%;
+  height: 100%;
+
+  transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(0, 1);
+  transform-origin: right top;
+}
+
+.bgleft:hover:before {
+  transform-origin: left top;
+  transform:scale(1, 1);
+}
