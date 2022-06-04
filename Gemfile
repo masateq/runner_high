@@ -39,6 +39,10 @@ gem 'enum_help', '~> 0.0.17'
 # railsの変数をjsへ渡す
 gem 'gon', '~> 6.4'
 
+# ページネーション
+gem 'kaminari', '~> 1.2'
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
