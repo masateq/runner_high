@@ -13,7 +13,7 @@ class RunningRecordsController < ApplicationController
       gon.vdot << running_record.vdot
       gon.date << running_record.date
     end
-    @running_records = current_user.running_records.order(date: :desc).page(params[:page]).per(3)
+    @running_records = current_user.running_records.order(date: :desc).page(params[:page]).per(10)
   end
 
   def create
