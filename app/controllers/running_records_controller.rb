@@ -6,7 +6,7 @@ class RunningRecordsController < ApplicationController
   end
 
   def index
-    @running_records = current_user.running_records.order(date: :desc)
+    @running_records = current_user.running_records.order(date: :desc).page(params[:page]).per(3)
     gon.vdot = []
     gon.date = []
     @running_records.each do |running_record|

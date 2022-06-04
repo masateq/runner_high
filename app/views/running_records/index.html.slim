@@ -21,5 +21,7 @@ a
   #one_year.btn.bgleft href='#' 
     span 年   
 
+= paginate(@running_records)
+
 = javascript_pack_tag 'chart', 'data-turbolinks-track': 'reload'
 = javascript_pack_tag 'button', 'data-turbolinks-track': 'reload'
