@@ -41,6 +41,7 @@ gem 'gon', '~> 6.4'
 
 # ページネーション
 gem 'kaminari', '~> 1.2'
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 
 
 # Reduces boot times through caching; required in config/boot.rb
