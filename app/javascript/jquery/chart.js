@@ -1,5 +1,7 @@
 import Chart from 'chart.js/auto';
 require('chartjs-adapter-moment')
+import annotationPlugin from 'chartjs-plugin-annotation';
+Chart.register(annotationPlugin);
 
 var ctx = document.getElementById('myChart');
 var set_chart_params = {
@@ -32,11 +34,26 @@ var set_chart_params = {
         }
       },
       y: {
+
         scaleLabel: {
           display: true,
           labelString: 'vdot'
         },
         type: 'linear',
+      }
+    },
+    plugins: {
+      autocolors: false,
+      annotation: {
+        annotations: {
+          line1: {
+            type: 'line',
+            yMin: 48,
+            yMax: 48,
+            borderColor: 'rgb(255, 99, 132)',
+            borderWidth: 2,
+          }
+        }
       }
     }
   }

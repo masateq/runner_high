@@ -1860,6 +1860,11 @@ chartjs-adapter-moment@^1.0.0:
   resolved "https://registry.yarnpkg.com/chartjs-adapter-moment/-/chartjs-adapter-moment-1.0.0.tgz#9174b1093c68bcfe285aff24f7388ad60d44e8f7"
   integrity sha512-PqlerEvQcc5hZLQ/NQWgBxgVQ4TRdvkW3c/t+SUEQSj78ia3hgLkf2VZ2yGJtltNbEEFyYGm+cA6XXevodYvWA==
 
+chartjs-plugin-annotation@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/chartjs-plugin-annotation/-/chartjs-plugin-annotation-1.4.0.tgz#4c84cec1ec838bc09712f3686237866e6c3f4798"
+  integrity sha512-OC0eGoVvdxTtGGi8mV3Dr+G1YmMhtYYQWqGMb2uWcgcnyiBslaRKPofKwAYWPbh7ABnmQNsNDQLIKPH+XiaZLA==
+
 "chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.1:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
