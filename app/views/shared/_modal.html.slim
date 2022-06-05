@@ -3,24 +3,42 @@ i.fa-solid.fa-circle-question data-bs-toggle="modal" data-bs-target="#exampleMod
   .modal-dialog role='document'
     .modal-content 
       .modal-header 
-        h5 
+        h3 
           #exampleModalLabel.modal-title 練習強度
         button.btn-close data-bs-dismiss="modal" aria-label="Close"
       .modal-body 
         .row.justify-content-center
           .col-12
-            h3 E(Easy) : 練習ペース
+            h5 E(Easy) : イージーペース
             .progress.mb-3 
               .progress-bar role='progressbar' style='width: 20%' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100'
-            h3 M(Marathon) : マラソンペース
+            ul 
+              li 無理の少ない範囲でのトレーニングで、怪我に対する耐性を作ることができる
+              li 推奨時間: 30分以上
+
+            h5 M(Marathon) : マラソンペース
             .progress.mb-3 
               .progress-bar.bg-info role='progressbar' style='width: 40%' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100'
-            h3 T(Threhold) : 閾値ペース
+            ul 
+              li マラソンの設定ペースで走るトレーニング
+              li 推奨時間: なし
+
+            h5 T(Threhold) : 閾値ペース
             .progress.mb-3 
               .progress-bar.bg-success role='progressbar' style='width: 60%' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100'
-            h3 I(Interval) : インターバル
+            ul 
+              li 持久力を向上させるのに有効なトレーニング
+              li 推奨時間: 20~30分
+
+            h5 I(Interval) : インターバル
             .progress.mb-3 
               .progress-bar.bg-warning role='progressbar' style='width: 80%' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100'
-            h3 R(Repetition) : レペティション
+            ul 
+              li 有酸素能力の向上を図るためのトレーニング
+              li 推奨時間: run 3~5分 + rest 数分 × 3~10セット
+            h5 R(Repetition) : レペティション
             .progress.mb-3 
               .progress-bar.bg-danger role='progressbar' style='width: 100%' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'
+            ul 
+              li 無酸素能力、ランニングエコノミーの向上を図るトレーニング
+              li 推奨時間: 2分以内 + rest run時間の2~4倍 × 3~10セット
