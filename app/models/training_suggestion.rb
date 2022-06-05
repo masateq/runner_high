@@ -40,7 +40,7 @@ class TrainingSuggestion < ApplicationRecord
   # 消費カロリーの導出
   def calorie
     time = (1000 / velocity) * self.running_distance                                            # 総ランニング時間(minを小数で)
-    mets = self.user.vdot * (percent + self.adjust_intensity.to_f / 100) / 3.5                                                       # mets導出
+    mets = self.user.vdot * (percent + self.adjust_intensity.to_f / 100) / 3.5                  # mets導出
     cal = (self.user.weight.present? ? mets * self.user.weight * time / 60 * 1.05 : nil).to_i   # 消費カロリー導出
     "#{cal} kcal"
   end
