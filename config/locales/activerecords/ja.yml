@@ -52,6 +52,7 @@ ja:
         id: ID
         running_distance: 走行距離
         intensity: 練習強度
+        adjust_intensity: 強度調整
         vdot: VDOT
         pace: ペース
   
