@@ -14,7 +14,17 @@
         .col-sm-9
           = f.select :intensity, TrainingSuggestion.intensities_i18n.invert, class: 'form-control'
           = render 'shared/modal'
+      .row.mb-3
+        = f.label :adjust_intensity, class: 'col-form-label col-sm-3'
+        .col-sm-2.d-flex
+          = f.number_field :adjust_intensity, class: 'form-control'
 
       = f.submit t('.registration'), class: 'btn btn-primary'
+
+    - if @training_suggestion.user.vdot
+      table.table
+        tr
+          th scope='col' vdot
+          td = @training_suggestion.user.vdot.round(2)
 
 = link_to 'トップページ', root_path

@@ -3,6 +3,7 @@ class CreateTrainingSuggestions < ActiveRecord::Migration[6.1]
     create_table :training_suggestions do |t|
       t.float       :running_distance
       t.integer     :intensity
+      t.integer     :adjust_intensity, default: 0
 
       t.references  :user, null: false, foreign_key: true
       

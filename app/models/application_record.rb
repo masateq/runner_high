@@ -9,7 +9,7 @@ class ApplicationRecord < ActiveRecord::Base
   # 走行時間から%VO2max
   def vdot_percent
     0.8 + 0.1894393 * Math.exp(-0.012778 * convert_minute) + 0.2989558 * Math.exp(-0.1932605 * convert_minute)
-    end
+  end
     
   # 走行速度[m/min]導出
   def calc_velocity
