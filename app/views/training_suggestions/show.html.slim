@@ -7,7 +7,7 @@
         table.table
           tr
             th scope='col' day
-            td = l @training_suggestion.created_at, format: :day
+            td = l @training_suggestion.updated_at, format: :day
           tr
             th scope='col' 走行距離
             td = @training_suggestion.running_distance
