@@ -48,7 +48,7 @@ class TrainingSuggestionsController < ApplicationController
   private
 
   def training_suggestion_params
-    params.require(:training_suggestion).permit(:running_distance, :intensity)
+    params.require(:training_suggestion).permit(:running_distance, :intensity, :adjust_intensity)
   end
 
   def set_training_user
