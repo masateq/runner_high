@@ -8,8 +8,13 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to root_path
-      flash[:success] = t(".success")
+      if @user.running_distance && @user.running_hour && @user.running_minute && @user.running_second
+        redirect_back_or_to root_path
+        flash[:success] = t(".success")
+      else
+        redirect_to edit_user_path(@user)
+        flash[:success] = t(".edit_user")
+      end
     else
       flash.now[:danger] = t(".fail")
       render :new
