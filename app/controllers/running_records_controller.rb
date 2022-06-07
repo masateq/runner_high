@@ -9,6 +9,7 @@ class RunningRecordsController < ApplicationController
     @running_records = current_user.running_records.order(date: :desc)
     gon.vdot = []
     gon.date = []
+    gon.user_vdot = current_user.vdot
     @running_records.each do |running_record|
       gon.vdot << running_record.vdot
       gon.date << running_record.date

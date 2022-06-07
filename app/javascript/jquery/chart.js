@@ -48,10 +48,11 @@ var set_chart_params = {
         annotations: {
           line1: {
             type: 'line',
-            yMin: 48,
-            yMax: 48,
-            borderColor: 'rgb(255, 99, 132)',
+            yMin: gon.user_vdot, // ユーザーの目標タイムから導出される目標vdot
+            yMax: gon.user_vdot,
+            borderColor: 'rgb(0, 99, 255)',
             borderWidth: 2,
+            borderDash: [5, 5]
           }
         }
       }
