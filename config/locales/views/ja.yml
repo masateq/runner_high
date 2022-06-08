@@ -1,28 +1,26 @@
 ja:
   defaults:
     login_fail: ログインしてください
-    login: ログインしています
+    login_success: ログインしています
+    login: ログイン
     unpermitted: 許可されていないページです
     delete: 削除
+    registration: 登録
     
   users:
     new:
       new_user: 新規登録
-      registration: 登録
-      login: ログイン
     create:
       success: ユーザー登録が完了しました
       fail: ユーザー登録に失敗しました
     edit:
       edit_user: ユーザー編集
       running_time: 目標タイム
-      registration: 登録
     update:
       success: ユーザー情報を編集しました
 
   user_sessions:
     new:
-      login: ログイン
       email: メールアドレス
       password: パスワード
       registration: ユーザー登録
@@ -45,13 +43,12 @@ ja:
   running_records:
     new:
       new_record: トレーニング記録入力
-      registration: 登録
     create:
       success: ランニング記録を作成しました
       fail: ランニング記録作成に失敗しました
     edit:
       edit_record: ランニング記録編集
-      registration: 編集
+      edit_running: 編集
       delete_confirm: 削除しますか？
     update:
       success: ランニング記録を編集しました
