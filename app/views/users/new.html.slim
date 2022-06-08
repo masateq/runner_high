@@ -19,5 +19,5 @@
         = f.label :password_confirmation, class: 'col-form-label col-sm-3'
         .col-sm-9
           = f.password_field :password_confirmation, class: 'form-control'
-      =f.submit '登録', class: 'btn btn-primary'
-    = link_to 'ログイン', login_path
+      =f.submit t('defaults.registration'), class: 'btn btn-primary'
+    = link_to t('defaults.login'), login_path

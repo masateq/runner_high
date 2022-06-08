@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def forbid_login_user
     if current_user
-      flash[:success] = t('defaults.login')
+      flash[:success] = t('defaults.login_success')
       redirect_to root_path
     end
   end
