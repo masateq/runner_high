@@ -1,5 +1,5 @@
 class RunningRecordsController < ApplicationController
-  before_action :set_running_record, only: %i[edit update]
+  before_action :set_running_record, only: %i[edit update destroy]
 
   def new
     @running_record = RunningRecord.new
@@ -46,6 +46,16 @@ class RunningRecordsController < ApplicationController
     else
       flash.now[:danger] = t('.fail')
       render :edit
+    end
+  end
+
+  def destroy
+    if @running_record.destroy
+      redirect_to running_records_path
+      flash[:success] = t('.success')
+    else
+      redirect_to running_records_path
+      flash[:danger] = t('.fail')
     end
   end
 

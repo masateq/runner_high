@@ -3,6 +3,7 @@ ja:
     login_fail: ログインしてください
     login: ログインしています
     unpermitted: 許可されていないページです
+    delete: 削除
     
   users:
     new:
@@ -51,11 +52,15 @@ ja:
     edit:
       edit_record: ランニング記録編集
       registration: 編集
+      delete_confirm: 削除しますか？
     update:
       success: ランニング記録を編集しました
       fail: ランニング記録の編集に失敗しました
     index:
       index_record: トレーニング記録一覧
+    destroy:
+      success: ランニング記録を削除しました
+      fail: ランニング記録を削除できませんでした
 
   training_suggestions:
     new:
