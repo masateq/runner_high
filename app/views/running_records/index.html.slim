@@ -1,5 +1,6 @@
 - content_for(:title, t('.index_record'))
-.row.col-12 
+.px-4.pt-5.my-5.text-center.border-bottom.fw-bold 
+  h1.display-4.fst-italic = t('.index_record')
   - @running_records.each do |running_record|
     .card.mb-4.bg-light-dark 
       .card-body 

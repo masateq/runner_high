@@ -1,30 +1,33 @@
 - content_for(:title, t('.new_training'))
-.container-fluid
-  .justify-content-center
-    h1 = t('.new_training')
-    p ランニング予定を入力してください
-    = form_with model: @training_suggestion, local: true do |f|
+.px-4.pt-5.text-center.border-bottom.fw-bold 
+  h1.display-4.fst-italic = t('.new_training')
+  p ランニング予定を入力してください
+  .col-lg-6.mx-auto 
+    = form_with model: @training_suggestion, url: training_suggestions_path, local: true do |f|
       .row.mb-3
-        = f.label :running_distance, class: 'col-form-label col-sm-3'
+        = f.label :running_distance, class: 'col-sm-6'
         .col-sm-2.d-flex
           = f.text_field :running_distance, class: 'form-control'
           |  km
       .row.mb-3
-        = f.label :intensity, class: 'col-form-label col-sm-3'
-        .col-sm-9
-          = f.select :intensity, TrainingSuggestion.intensities_i18n.invert, class: 'form-control'
+        = f.label :intensity, class: 'col-sm-6'
+        .col-sm-6.d-flex
+          = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-control'
           = render 'shared/modal'
       .row.mb-3
-        = f.label :adjust_intensity, class: 'col-form-label col-sm-3'
+        = f.label :adjust_intensity, class: 'col-sm-6'
         .col-sm-2.d-flex
           = f.number_field :adjust_intensity, class: 'form-control'
+      .d-sm-flex.justify-content-sm-center.mb-5 
+        = f.submit t('.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
-      = f.submit t('.registration'), class: 'btn btn-primary'
+  .overflow-hidden style='max-height: 30vh;'
+    .container.px-5 
+      img src="../images/bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" width="700" height="500" loading="lazy"
 
-    - if current_user.running_distance && current_user.running_hour && current_user.running_minute && current_user.running_second
-      table.table
-        tr
-          th scope='col' vdot
-          td = current_user.vdot.round(2)
+      - if @training_suggestion.user.vdot
+        table.table
+          tr
+            th scope='col' vdot
+            td = @training_suggestion.user.vdot.round(2)
 
-= link_to 'トップページ', root_path
