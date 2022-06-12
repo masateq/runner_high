@@ -1,15 +1,26 @@
 - content_for(:title, t('.top'))
+.container 
+  .row.d-grid.gap-2.d-md-block
+    .col-sm-6.btn.btn-outline-primary
+      = link_to t('.user_infomation'), edit_user_path(@user)
+      i.fa-solid.fa-address-card.fa-2x.px-2
 
-= link_to t('.user_infomation'), edit_user_path(@user)
-= link_to t('.running_new'), new_running_record_path
-= link_to t('.running_index'), running_records_path
+    .col-sm-6.btn.btn-outline-secondary
+      = link_to t('.running_new'), new_running_record_path
+      i.fa-solid.fa-person-running.fa-2x.px-2
 
-- if @training_suggestion.blank?
-  = link_to t('.training_suggestion'), new_training_suggestions_path
-- else 
-  = link_to t('.edit_training_suggestion'), edit_training_suggestions_path
+    .col-sm-6.btn.btn-outline-success
+      = link_to t('.running_index'), running_records_path
+      i.fa-solid.fa-book-open.fa-2x.px-2
 
-.overflow-hidden.jumbotron style='max-height: 30vh;'
-    .container
-      img src="/assets/jogging.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" loading="lazy"
+    .col-sm-6.btn.btn-outline-danger
+      - if @training_suggestion.blank?
+        = link_to t('.training_suggestion'), new_training_suggestions_path
+      - else 
+        = link_to t('.edit_training_suggestion'), edit_training_suggestions_path
+      i.fa-solid.fa-comment-dots.fa-2x.px-2
+
+    .overflow-hidden.jumbotron style='max-height: 30vh;'
+        .container
+          img src="/assets/jogging.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" loading="lazy"
 
