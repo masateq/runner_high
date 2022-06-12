@@ -21,13 +21,13 @@
       .d-sm-flex.justify-content-sm-center.mb-5 
         = f.submit t('.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
-  .overflow-hidden style='max-height: 30vh;'
-    .container.px-5 
-      img src="../images/bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" width="700" height="500" loading="lazy"
-
       - if @training_suggestion.user.vdot
         table.table
           tr
             th scope='col' vdot
-            td = @training_suggestion.user.vdot.round(2)
+            td = @training_suggestion.user.vdot.round(2)    
+
+  .overflow-hidden.jumbotron style='max-height: 30vh;'
+    .container
+      img src="/assets/jogging.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" loading="lazy"
 
