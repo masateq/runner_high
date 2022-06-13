@@ -34,11 +34,6 @@ ja:
   top_pages:
     top:
       top: トップページ
-      user_infomation: ユーザー情報
-      running_new: ランニング記録入力
-      running_index: ランニング記録一覧
-      training_suggestion: トレーニング提案画面
-      edit_training_suggestion: トレーニング提案画面編集
 
   running_records:
     new:
