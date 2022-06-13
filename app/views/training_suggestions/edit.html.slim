@@ -12,7 +12,7 @@
       .row.mb-3
         = f.label :intensity, class: 'col-sm-6'
         .col-sm-6.d-flex
-          = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-control'
+          = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-select'
           = render 'shared/modal'
       .row.mb-3
         = f.label :adjust_intensity, class: 'col-sm-6'
