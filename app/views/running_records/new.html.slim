@@ -1,16 +1,16 @@
 - content_for(:title, t('.new_record'))
-.container-fluid
-  .justify-content-center
-    h1 = t('.new_record')
+.px-4.pt-5.text-center.border-bottom.fw-bold 
+  h1.display-4.fst-italic = t('.new_record')
+  .col-lg-6.mx-auto 
     = form_with model: @running_record, local: true do |f|
       .row.mb-3
-        = f.label :date, class: 'col-form-label col-sm-3'
-        .col-sm-9
+        = f.label :date, class: 'col-sm-6'
+        .col-sm-6.d-flex
           = f.date_select :date, { use_month_numbers: true },\
            { class: 'form-control', style: 'display: inline-block;width: auto;' }
       .row.mb-3
-        = f.label :time, class: 'col-form-label col-sm-3'
-        .col-sm-4.d-flex
+        = f.label :time, class: 'col-sm-6'
+        .col-sm-6.d-flex
           = f.text_field :running_hour, class: 'form-control', placeholder: 'hh'
           | 時間　
           = f.text_field :running_minute, class: 'form-control', placeholder: 'mm'
@@ -18,16 +18,19 @@
           = f.text_field :running_second, class: 'form-control', placeholder: 'ss'
           | 秒
       .row.mb-3
-        = f.label :running_distance, class: 'col-form-label col-sm-3'
+        = f.label :running_distance, class: 'col-sm-6'
         .col-sm-2.d-flex
           = f.text_field :running_distance, class: 'form-control'
           |  km
       .row.mb-3
-        = f.label :intensity, class: 'col-form-label col-sm-3'
-        .col-sm-9
-          = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-control'
+        = f.label :intensity, class: 'col-sm-6'
+        .col-sm-6.d-flex
+          = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-select'
           = render 'shared/modal'
+      .d-grid.gap-2.d-sm-flex.justify-content-sm-center.mb-5 
+        = f.submit t('defaults.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
-      = f.submit t('defaults.registration'), class: 'btn btn-primary'
 
-= link_to 'トップページ', root_path
+  .overflow-hidden style='max-height: 30vh;'
+    .container
+      img src="/assets/watch.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" loading="lazy"
