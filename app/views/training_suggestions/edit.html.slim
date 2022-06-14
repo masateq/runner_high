@@ -21,7 +21,7 @@
       .d-sm-flex.justify-content-sm-center.mb-5 
         = f.submit t('.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
-      - if @training_suggestion.user.vdot
+      - if @training_suggestion.user.running_distance && @training_suggestion.user.running_hour && @training_suggestion.user.running_minute && @training_suggestion.user.running_second
         table.table
           tr
             th scope='col' vdot

@@ -25,9 +25,4 @@
     .container
       img src="/assets/track.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" loading="lazy"
 
-      - if @training_suggestion.user.vdot
-        table.table
-          tr
-            th scope='col' vdot
-            td = @training_suggestion.user.vdot.round(2)
 

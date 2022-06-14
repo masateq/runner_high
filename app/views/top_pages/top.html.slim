@@ -1,6 +1,6 @@
 - content_for(:title, t('.top'))
 .container 
-  .row.d-grid.gap-2.d-sm-block
+  .row.d-grid.gap-2.d-sm-block.my-3
     =link_to(edit_user_path(@user), class: 'primary link btn btn-outline-primary col-sm-6') do
       p.d-inline ユーザー情報
       i.fa-solid.fa-address-card.fa-2x.px-2 
@@ -21,9 +21,20 @@
       =link_to(edit_training_suggestions_path, class: 'danger link btn btn-outline-danger col-sm-6') do
         p.d-inline トレーニング編集
         i.fa-solid.fa-comment-dots.fa-2x.px-2 
+  
+  .display-5.fst-italic.my-3
+    .table-responsive
+        table.table
+          tr
+            th scope='col' 月間トレーニング数
+            td = @month_records.count
+          tr
+            th scope='col' 月間走行距離
+            td = "#{@month_records.map(&:running_distance).sum} km"
+
 
   .overflow-hidden.jumbotron style='max-height: 30vh;'
       .container
         img src="/assets/jogging.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" loading="lazy"
-
+  
 = javascript_pack_tag 'top_button', 'data-turbolinks-track': 'reload'
