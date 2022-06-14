@@ -25,9 +25,9 @@
     .container
       img src="/assets/track.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="画像" loading="lazy"
 
-      - if @training_suggestion.user.vdot
+      - if current_user.running_distance && current_user.running_hour && current_user.running_minute && current_user.running_second
         table.table
           tr
             th scope='col' vdot
-            td = @training_suggestion.user.vdot.round(2)
+            td = current_user.vdot.round(2)
 
