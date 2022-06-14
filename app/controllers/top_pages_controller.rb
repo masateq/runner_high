@@ -2,6 +2,7 @@ class TopPagesController < ApplicationController
   def top
     @user = User.find(current_user.id)
     @training_suggestion = TrainingSuggestion.find_by(user_id: current_user.id)
+    
     month_records = @user.running_records.order(date: :desc)
     @month_records = []
     month_records.each do |month_record|
