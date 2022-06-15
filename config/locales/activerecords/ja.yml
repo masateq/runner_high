@@ -48,6 +48,7 @@ ja:
         running_hour: hour
         running_minute: minute
         running_socond: second
+        times: 本数
       training_suggestion:
         id: ID
         running_distance: 走行距離
