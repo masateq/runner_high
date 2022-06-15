@@ -62,7 +62,7 @@ class RunningRecordsController < ApplicationController
   private
 
   def running_record_params
-    params.require(:running_record).permit(:date, :running_hour, :running_minute, :running_second, :running_distance, :intensity)
+    params.require(:running_record).permit(:date, :running_hour, :running_minute, :running_second, :running_distance, :intensity, :times)
   end
 
   def set_running_record
