@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 2022_05_07_080327) do
     t.integer "age"
     t.integer "sex", default: 0, null: false
     t.float "weight"
-    t.integer "running_hour"
-    t.integer "running_minute"
-    t.integer "running_second"
-    t.float "running_distance"
+    t.integer "running_hour", default: 0, null: false
+    t.integer "running_minute", default: 30, null: false
+    t.integer "running_second", default: 0, null: false
+    t.float "running_distance", default: 5.0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

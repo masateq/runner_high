@@ -8,10 +8,10 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.integer :age
       t.integer :sex, default: 0, null: false
       t.float   :weight
-      t.integer :running_hour
-      t.integer :running_minute
-      t.integer :running_second
-      t.float   :running_distance
+      t.integer :running_hour, default: 0, null: false
+      t.integer :running_minute, default: 30, null: false
+      t.integer :running_second, default: 0, null: false
+      t.float   :running_distance, default: 5.0, null: false
 
       t.timestamps
     end
