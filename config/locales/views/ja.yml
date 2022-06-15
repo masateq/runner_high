@@ -28,7 +28,6 @@ ja:
     create:
       success: ログインしました
       fail: ログインに失敗しました
-      edit_user: ユーザー情報を設定してください
     destroy:
       success: ログアウトしました
 
