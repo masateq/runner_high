@@ -18,6 +18,7 @@ ja:
       running_time: 目標タイム
     update:
       success: ユーザー情報を編集しました
+      fail: ユーザー情報を編集できませんでした
 
   user_sessions:
     new:
