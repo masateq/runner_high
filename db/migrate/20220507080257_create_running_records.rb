@@ -9,6 +9,7 @@ class CreateRunningRecords < ActiveRecord::Migration[6.1]
       t.float       :calorie
       t.float       :vdot
       t.integer     :intensity, default: 0, null: false
+      t.integer     :freq, default: 1, null: false
       t.references  :user, null: false, foreign_key: true
 
       t.timestamps

@@ -2,6 +2,7 @@ class TrainingSuggestion < ApplicationRecord
   belongs_to :user
 
   validates :running_distance, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, presence: true
+  validates :freq, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }, presence: true
   enum intensity: { E: 0, M: 1, T: 2, I: 3, R: 4 }
 
   # 練習強度(intensity)ごとにランニング時のVO2maxに対する負荷の比率を定義
@@ -41,7 +42,7 @@ class TrainingSuggestion < ApplicationRecord
   def calorie
     time = (1000 / velocity) * self.running_distance                                            # 総ランニング時間(minを小数で)
     mets = self.user.vdot * (percent + self.adjust_intensity.to_f / 100) / 3.5                  # mets導出
-    cal = (self.user.weight.present? ? mets * self.user.weight * time / 60 * 1.05 : nil).to_i   # 消費カロリー導出
+    cal = (self.user.weight.present? ? mets * self.user.weight * time * freq / 60 * 1.05 : nil).to_i   # 消費カロリー導出
     "#{cal} kcal"
   end
 

@@ -48,6 +48,7 @@ ja:
         running_hour: hour
         running_minute: minute
         running_socond: second
+        freq: 本数
       training_suggestion:
         id: ID
         running_distance: 走行距離
@@ -55,6 +56,7 @@ ja:
         adjust_intensity: 強度調整
         vdot: VDOT
         pace: ペース
+        freq: 本数
   
   time:
     formats:

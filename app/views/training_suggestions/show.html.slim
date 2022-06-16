@@ -19,6 +19,9 @@
         tr
           th scope='col' ペース
           td = @training_suggestion.pace
+          tr
+          th scope='col' 本数
+          td = "#{@training_suggestion.freq} 本"
         tr
           th scope='col' タイム
           td = @training_suggestion.pace_time

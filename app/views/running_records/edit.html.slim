@@ -27,6 +27,13 @@
         .col-sm-6.d-flex
           = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-select'
           = render 'shared/modal'
+      .row.mb-3
+        = f.label :freq, class: 'col-sm-6'
+        .col-sm-2.d-flex
+          = f.text_field :freq, class: 'form-control'
+          |  本 
+      p.text-secondary ※練習強度が「E/M/T」のとき、本数は1にしてください
+
       .d-grid.gap-2.d-sm-flex.justify-content-sm-center.mb-5 
         = f.submit t('defaults.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
