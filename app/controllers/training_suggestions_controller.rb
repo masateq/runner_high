@@ -50,7 +50,7 @@ class TrainingSuggestionsController < ApplicationController
   private
 
   def training_suggestion_params
-    params.require(:training_suggestion).permit(:running_distance, :intensity, :adjust_intensity, :times)
+    params.require(:training_suggestion).permit(:running_distance, :intensity, :adjust_intensity, :freq)
   end
 
   def set_training_user
@@ -58,7 +58,7 @@ class TrainingSuggestionsController < ApplicationController
   end
 
   def judge_intensity
-    @training_suggestion.update(times: 1) if @training_suggestion.intensity == 'E'|| @training_suggestion.intensity == 'M'|| @training_suggestion.intensity == 'T'
+    @training_suggestion.update(freq: 1) if @training_suggestion.intensity == 'E'|| @training_suggestion.intensity == 'M'|| @training_suggestion.intensity == 'T'
   end
 
 end

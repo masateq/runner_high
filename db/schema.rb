@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_05_07_080327) do
     t.float "calorie"
     t.float "vdot"
     t.integer "intensity", default: 0, null: false
-    t.integer "times", default: 1, null: false
+    t.integer "freq", default: 1, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_05_07_080327) do
     t.float "running_distance"
     t.integer "intensity"
     t.integer "adjust_intensity", default: 0
-    t.integer "times", default: 1, null: false
+    t.integer "freq", default: 1, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

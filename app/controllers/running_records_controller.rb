@@ -64,7 +64,7 @@ class RunningRecordsController < ApplicationController
   private
 
   def running_record_params
-    params.require(:running_record).permit(:date, :running_hour, :running_minute, :running_second, :running_distance, :intensity, :times)
+    params.require(:running_record).permit(:date, :running_hour, :running_minute, :running_second, :running_distance, :intensity, :freq)
   end
 
   def set_running_record
@@ -72,7 +72,7 @@ class RunningRecordsController < ApplicationController
   end
 
   def judge_intensity
-    @running_record.update(times: 1) if @running_record.intensity == 'E'|| @running_record.intensity == 'M'|| @running_record.intensity == 'T'
+    @running_record.update(freq: 1) if @running_record.intensity == 'E'|| @running_record.intensity == 'M'|| @running_record.intensity == 'T'
   end
   
 end

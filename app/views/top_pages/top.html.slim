@@ -30,7 +30,7 @@
             td = @month_records.count
           tr
             th scope='col' 月間走行距離
-            td = "#{@month_records.map{|dist| dist.running_distance * dist.times}.sum} km"
+            td = "#{@month_records.map{|dist| dist.running_distance * dist.freq}.sum} km"
 
 
   .overflow-hidden.jumbotron style='max-height: 30vh;'
