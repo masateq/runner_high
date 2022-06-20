@@ -11,6 +11,7 @@ class CreateRunningRecords < ActiveRecord::Migration[6.1]
       t.integer     :intensity, default: 0, null: false
       t.integer     :freq, default: 1, null: false
       t.references  :user, null: false, foreign_key: true
+      t.integer     :status, default: 0, null: false
 
       t.timestamps
     end
