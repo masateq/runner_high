@@ -12,6 +12,9 @@ ja:
         T: T
         I: I
         R: R
+      status:
+        close: 非表示
+        open: 表示
     training_suggestion:
       intensity:
         E: E

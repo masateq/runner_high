@@ -8,5 +8,6 @@ class RunningRecord < ApplicationRecord
   validates :freq, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }, presence: true
 
   enum intensity: { E: 0, M: 1, T: 2, I: 3, R: 4 }
+  enum status: { close: 0, open: 1 }
   
 end
