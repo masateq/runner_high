@@ -52,6 +52,7 @@ ja:
         running_minute: minute
         running_socond: second
         freq: 本数
+        status: 表示/非表示
       training_suggestion:
         id: ID
         running_distance: 走行距離
