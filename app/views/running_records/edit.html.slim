@@ -37,6 +37,7 @@
         = f.label :status, class: 'col-sm-6'
         .col-sm-6.d-flex
           = f.select :status, RunningRecord.statuses_i18n.invert, class: 'form-select'
+      p.text-secondary ※vdotグラフへの表示/非表示を指定します(練習強度「E/M/T」のみ)
 
       .d-grid.gap-2.d-sm-flex.justify-content-sm-center.mb-5 
         = f.submit t('defaults.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
