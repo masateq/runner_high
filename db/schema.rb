@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_05_07_080327) do
     t.integer "intensity", default: 0, null: false
     t.integer "freq", default: 1, null: false
     t.bigint "user_id", null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_running_records_on_user_id"

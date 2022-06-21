@@ -11,8 +11,10 @@ class RunningRecordsController < ApplicationController
     gon.date = []
     gon.user_vdot = current_user.vdot
     @running_records.each do |running_record|
-      gon.vdot << running_record.vdot
-      gon.date << running_record.date
+      if judge_intensity(running_record) && running_record.status == 'open'
+        gon.vdot << running_record.vdot
+        gon.date << running_record.date
+      end
     end
     @running_records = current_user.running_records.order(date: :desc).page(params[:page]).per(10)
   end
@@ -20,7 +22,7 @@ class RunningRecordsController < ApplicationController
   def create
     @running_record = current_user.running_records.build(running_record_params)
     if @running_record.save
-      judge_intensity # 強度がE/M/Tのときランニング本数は1固定
+      @running_record.update(freq: 1) if judge_intensity(@running_record) # 強度がE/M/Tのときランニング本数は1固定
       redirect_to running_records_path
       flash[:success] = t(".success")
     else
@@ -42,7 +44,7 @@ class RunningRecordsController < ApplicationController
 
   def update
     if @running_record.update(running_record_params)
-      judge_intensity  # 強度がE/M/Tのときランニング本数は1固定
+      @running_record.update(freq: 1) if judge_intensity(@running_record) # 強度がE/M/Tのときランニング本数は1固定
       redirect_to running_records_path
       flash[:success] = t('.success')
     else
@@ -64,15 +66,11 @@ class RunningRecordsController < ApplicationController
   private
 
   def running_record_params
-    params.require(:running_record).permit(:date, :running_hour, :running_minute, :running_second, :running_distance, :intensity, :freq)
+    params.require(:running_record).permit(:date, :running_hour, :running_minute, :running_second, :running_distance, :intensity, :freq, :status)
   end
 
   def set_running_record
     @running_record = current_user.running_records.find(params[:id])
-  end
-
-  def judge_intensity
-    @running_record.update(freq: 1) if @running_record.intensity == 'E'|| @running_record.intensity == 'M'|| @running_record.intensity == 'T'
   end
   
 end

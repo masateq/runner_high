@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def judge_intensity(record)
+    record.intensity == 'E'|| record.intensity == 'M'|| record.intensity == 'T'
+  end
 end
