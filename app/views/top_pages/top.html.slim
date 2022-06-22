@@ -28,9 +28,17 @@
           tr
             th scope='col' 月間トレーニング数
             td = @month_records.count
+            td
+              - if @month_records.count >= 15
+                i.fa-solid.fa-crown.px-2 style="color: #DBB400;"
+              - elsif @month_records.count >= 10
+                i.fa-solid.fa-crown.px-2 style="color: #C9CACA;"
+              - elsif @month_records.count >= 5
+                i.fa-solid.fa-crown.px-2 style="color: #C47022;"
           tr
             th scope='col' 月間走行距離
             td = "#{@month_records.map{|dist| dist.running_distance * dist.freq}.sum.round(2)} km"
+            td
 
 
   .overflow-hidden.jumbotron style='max-height: 30vh;'
