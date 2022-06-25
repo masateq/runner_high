@@ -1,11 +1,12 @@
 header#header
   h1
     = link_to root_path do
-      i.fa-solid.fa-person-running.fa-2x style="color: white;"
+      i.fas.fa-running.fa-2x style="color: white;"
   h1 Runner's High
   nav 
     ul#g-navi 
       li =link_to 'logout', logout_path, method: :delete
           
     = javascript_pack_tag 'header', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'header', media: 'all', 'data-turbolinks-track': 'reload'
    
