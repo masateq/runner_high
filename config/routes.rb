@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create edit update]
   resources :running_records, only: %i[new create edit index update destroy]
   resource :training_suggestions, only: %i[new create show edit update]
-
+  
+  get "tutorial" => "top_pages#tutorial"
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => "user_sessions#create"
   delete 'logout' => 'user_sessions#destroy', :as => :logout
