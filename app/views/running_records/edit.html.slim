@@ -5,7 +5,7 @@
     = form_with model: @running_record, local: true do |f|
       .row.mb-3
         = f.label :date, class: 'col-sm-6'
-        .col-sm-6.d-flex
+        .col-sm-6.d-sm-flex
           = f.date_select :date, { use_month_numbers: true },\
            { class: 'form-control', style: 'display: inline-block;width: auto;' }
       .row.mb-3
@@ -24,7 +24,7 @@
           |  km
       .row.mb-3
         = f.label :intensity, class: 'col-sm-6'
-        .col-sm-6.d-flex
+        .col-sm-6.d-sm-flex
           = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-select'
           = render 'shared/modal'
       .row.mb-3
@@ -35,7 +35,7 @@
       p.text-secondary ※練習強度が「E/M/T」のとき、本数は1にしてください
       .row.mb-3
         = f.label :status, class: 'col-sm-6'
-        .col-sm-6.d-flex
+        .col-sm-6.d-sm-flex
           = f.select :status, RunningRecord.statuses_i18n.invert, class: 'form-select'
       p.text-secondary ※vdotグラフへの表示/非表示を指定します(練習強度「E/M/T」のみ)
 

@@ -11,7 +11,7 @@
           |  km
       .row.mb-3
         = f.label :intensity, class: 'col-sm-6'
-        .col-sm-6.d-flex
+        .col-sm-6.d-sm-flex
           = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-select'
           = render 'shared/modal'
       .row.mb-3
@@ -22,7 +22,7 @@
       p.text-secondary ※練習強度が「E/M/T」のとき、本数は1にしてください
       .row.mb-3
         = f.label :adjust_intensity, class: 'col-sm-6'
-        .col-sm-2.d-flex
+        .col-sm-2.d-sm-flex
           = f.number_field :adjust_intensity, class: 'form-control'
       .d-sm-flex.justify-content-sm-center.mb-5 
         = f.submit t('.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
