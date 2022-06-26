@@ -5,19 +5,19 @@
     = form_with model:@user, local: true do |f|
       .row.mb-3
         = f.label :name, class: 'col-sm-6'
-        .col-sm-4.d-flex
+        .col-sm-4.d-sm-flex
           = f.text_field :name, class: 'form-control'
       .row.mb-3
         = f.label :age, class: 'col-sm-6'
-        .col-sm-2.d-flex
+        .col-sm-2.d-sm-flex
           = f.text_field :age, class: 'form-control', placeholder: '0~100'
       .row.mb-3
         = f.label :sex, class: 'col-sm-6'
-        .col-sm-3.d-flex
+        .col-sm-6.d-sm-flex
           = f.collection_radio_buttons :sex, User.sexes_i18n, :first, :last, class: 'form-check-input'
       .row.mb-3
         = f.label :weight, class: 'col-sm-6'
-        .col-sm-2.d-flex
+        .col-sm-2.d-sm-flex
           = f.text_field :weight, class: 'form-control', placeholder: '0~200'
       .row.mb-3
         = f.label t('.running_time'), class: 'col-sm-6'

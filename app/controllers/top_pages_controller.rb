@@ -11,4 +11,8 @@ class TopPagesController < ApplicationController
       end
     end
   end
+
+  def tutorial
+  end
+  
 end
