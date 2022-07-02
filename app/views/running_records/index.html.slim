@@ -2,11 +2,12 @@
 .px-4.pt-5.my-5.text-center.border-bottom.fw-bold 
   h1.display-4.fst-italic = t('.index_record')
   - @running_records.each do |running_record|
-    .card.mb-4.bg-light-dark 
-      .card-body 
+    .card.bg-light-dark.mb-4
+      .card-body
         h4.card-title
           = link_to "Date: #{running_record.date}　Distance: #{running_record.running_distance * running_record.freq} km　Intensity: #{running_record.intensity}",\
-           edit_running_record_path(running_record) 
+           edit_running_record_path(running_record), class: "mx-4"
+          = link_to "削除",running_record_path(running_record), method: :delete, data: { confirm: "トレーニング記録を削除します。よろしいですか？"}, class: "btn btn-danger"
 
 canvas#myChart
 a
