@@ -1,0 +1,10 @@
+.container
+  #map
+  .btns
+    #startButton.btn
+      | Start
+    #stopButton.btn
+      | Stop
+script[async defer src="https://maps.googleapis.com/maps/api/js?key=#{ ENV['GOOGLE_MAP_API'] }&callback=initMap"]
+= javascript_pack_tag 'map', 'data-turbolinks-track': 'reload'
+= stylesheet_pack_tag 'map', media: 'all', 'data-turbolinks-track': 'reload'

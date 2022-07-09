@@ -85,6 +85,10 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     digest (3.1.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     enum_help (0.0.19)
       activesupport (>= 3.0.0)
     erubi (1.10.0)
@@ -319,6 +323,7 @@ DEPENDENCIES
   bootstrap5-kaminari-views (~> 0.0.1)
   byebug
   capybara (>= 3.26)
+  dotenv-rails
   enum_help (~> 0.0.17)
   gon (~> 6.4)
   html2slim (~> 0.2.0)
