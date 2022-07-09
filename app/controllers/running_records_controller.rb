@@ -63,6 +63,10 @@ class RunningRecordsController < ApplicationController
     end
   end
 
+  def measurement
+
+  end
+
   private
 
   def running_record_params

@@ -42,6 +42,8 @@
   .text-center
     = link_to t('.tutorial'), tutorial_path
 
+.container 
+  = link_to "マップ表示",measurement_path, class: "mx-4"
   .overflow-hidden.jumbotron style='max-height: 30vh;'
       .container
         = image_tag "jogging.jpg", class: "img-fluid border rounded-3 shadow-lg mb-4", alt: "画像", loading: "lazy"
