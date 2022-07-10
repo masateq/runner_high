@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   
   get "tutorial" => "top_pages#tutorial"
   get "measurement" => "running_records#measurement"
+
+  get "terms" => "static_pages#terms"
+  get "privacy" => "static_pages#privacy"
+
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => "user_sessions#create"
   delete 'logout' => 'user_sessions#destroy', :as => :logout
