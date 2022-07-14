@@ -132,14 +132,12 @@ function initMap() {
     });
   }
 
-  $('#startButton').click(function () {
+  $('#start').click(function () {
     watchPosition();
-    alert('GPS追跡を開始します')
   });
 
-  $('#stopButton').click(function () {
+  $('#stop').click(function () {
     clearWatch(watchId);
-    alert('GPS追跡を終了します')
   });
 }
 

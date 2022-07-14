@@ -11,7 +11,7 @@ var timeToadd = 0;
 
 function timerText(){
   var hour = Math.floor(elapsedTime / 3600000);
-  var min = Math.floor(elapsedTime / 60000);
+  var min = Math.floor(elapsedTime % 3600000 / 60000);
   var sec = Math.floor(elapsedTime % 60000 / 1000);
   var ms = elapsedTime % 1000;
 
@@ -20,7 +20,7 @@ function timerText(){
   sec = ('0' + sec).slice(-2);
   ms = ('0' + ms).slice(-2);
 
-  timer.textContent = hour + ':' + min + ':' + sec + ':' + ms;
+  timer.textContent = hour + ':' + min + ':' + sec;
 }
 
 
