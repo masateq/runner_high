@@ -1,14 +1,19 @@
-.content.text-center.fst-italic
-  h1 走行距離
-  h2 m
-.btn-box
+.container
+  #map
+  .btns
+    #startButton.btn
+      | Start
+    #stopButton.btn
+      | Stop
+
   #timer
-    | 0:00:00
-  .btn-block
-    input#start.btn[type="button" value="Start"]
-    input#stop.btn[type="button" value="Stop" disabled]
-    input#reset.btn[type="button" value="Reset" disabled]
-#map.mx-auto
+    | 0:00:00:00
+  input#start[type="button" value="Start"]
+  input#stop[type="button" value="Stop" disabled]
+  input#reset[type="button" value="Reset" disabled]
+
+
+
 script[async defer src="https://maps.googleapis.com/maps/api/js?key=#{ ENV['GOOGLE_MAP_API'] }&callback=initMap"]
 = javascript_pack_tag 'map', 'data-turbolinks-track': 'reload'
 = stylesheet_pack_tag 'map', media: 'all', 'data-turbolinks-track': 'reload'
