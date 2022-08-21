@@ -45,9 +45,6 @@ gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
 
-# APIキーを環境変数化
-gem 'dotenv-rails'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
