@@ -1,48 +1,5 @@
-html, body, .container {
-  height: 100%;
+html, body, .container, #map {
+  height: 90%;
   margin: 0px;
   padding: 0px
-}
-
-#map {
-  height: 80%;
-  width: 80%;
-  margin: 0px;
-  padding: 0px
-}
-
-.btn-box {
-  margin: 20px auto;
-  padding: 15px;
-  width: 270px;
-  background: rgb(60, 125, 163);
-  text-align: center;
-  line-height: 40px;
-}
-
-#timer {
-  font-size: 40px;
-  margin-bottom: 15px;
-  background: #fff;
-  height: 120px;
-  line-height: 120px;
-}
-
-.btn {
-  width: 30%;
-  height: 45px;
-  line-height: 45px;
-  background: #ddd;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  border-radius:5px;
-}
-.btn:active{
-  color:#f00;
-}
-
-.btn-block {
-  display: flex;
-  justify-content: space-between;
 }
