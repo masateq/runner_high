@@ -136,7 +136,6 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.16.0)
     msgpack (1.5.2)
-    mini_portile2 (2.8.0)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     net-imap (0.2.3)
