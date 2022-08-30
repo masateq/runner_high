@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_07_080327) do
+ActiveRecord::Schema.define(version: 2022_08_30_124046) do
 
-  create_table "running_records", charset: "utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "running_records", force: :cascade do |t|
     t.date "date"
     t.integer "running_hour"
     t.integer "running_minute"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_05_07_080327) do
     t.index ["user_id"], name: "index_running_records_on_user_id"
   end
 
-  create_table "training_suggestions", charset: "utf8mb4", force: :cascade do |t|
+  create_table "training_suggestions", force: :cascade do |t|
     t.float "running_distance"
     t.integer "intensity"
     t.integer "adjust_intensity", default: 0
@@ -37,10 +40,12 @@ ActiveRecord::Schema.define(version: 2022_05_07_080327) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "temperature"
+    t.integer "height"
     t.index ["user_id"], name: "index_training_suggestions_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "crypted_password"
