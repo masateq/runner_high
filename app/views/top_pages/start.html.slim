@@ -1,0 +1,12 @@
+- content_for(:title, t('.top'))
+.pt-5.border-bottom.fw-bold.text-center.container 
+  h1.display-2.fst-italic.pb-3 = t('.runners_high')
+  h5.text-secondary ランニングをしたいけど、自分がどんなペースで走ればいいかわからない人へ。
+  h5.text-secondary 目標タイムとその日の練習強度(5段階)を入力すると、あなたに合ったペースを提案してくれます。
+  h6.row.d-inline-block.my-3
+    = link_to t('.registration'), new_user_path, class: 'btn btn-outline-primary btn-lg col-sm-12 mb-4'
+    = link_to t('.login'), login_path, class: 'btn btn-outline-primary btn-lg col-sm-12 mb-4'
+    = link_to t('.tutorial'), tutorial_path
+
+  .overflow-hidden style='max-height: 30vh;'
+    = image_tag "first.jpg", class: "img-fluid border rounded-3 shadow-lg mb-4", alt: "画像", loading: "lazy"

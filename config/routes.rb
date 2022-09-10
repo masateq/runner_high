@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :running_records, only: %i[new create edit index update destroy]
   resource :training_suggestions, only: %i[new create show edit update]
   
+  get "start" => "top_pages#start"
   get "tutorial" => "top_pages#tutorial"
   
   get "terms" => "static_pages#terms"
