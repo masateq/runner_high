@@ -39,6 +39,8 @@
             th scope='col' 月間走行距離
             td = "#{@month_records.map{|dist| dist.running_distance * dist.freq}.sum.round(2)} km"
             td
+  .text-center
+    = link_to t('.tutorial'), tutorial_path
 
   .overflow-hidden.jumbotron style='max-height: 30vh;'
       .container
