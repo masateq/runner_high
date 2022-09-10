@@ -1,4 +1,4 @@
-- content_for(:title, t('.top'))
+- content_for(:title, t('.menu'))
 .container 
   .row.d-grid.gap-2.d-sm-block.my-3
     =link_to(edit_user_path(@user), class: 'primary link btn btn-outline-primary col-sm-6') do
@@ -39,8 +39,6 @@
             th scope='col' 月間走行距離
             td = "#{@month_records.map{|dist| dist.running_distance * dist.freq}.sum.round(2)} km"
             td
-  .text-center
-    = link_to t('.tutorial'), tutorial_path
 
   .overflow-hidden.jumbotron style='max-height: 30vh;'
       .container
