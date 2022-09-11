@@ -1,7 +1,7 @@
 - content_for(:title, t('.edit_user'))
 .px-4.pt-5.text-center.border-bottom.fw-bold 
   h1.display-4.fst-italic = t('.edit_user')
-  .col-sm-8.mx-auto.fw-bold 
+  .col-sm-8.mx-auto
     = form_with model:@user, local: true do |f|
       .row.mb-3
         = f.label :name, class: 'col-5'
