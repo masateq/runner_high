@@ -1,16 +1,16 @@
 - content_for(:title, t('.new_record'))
 .px-4.pt-5.text-center.border-bottom.fw-bold 
   h1.display-4.fst-italic = t('.new_record')
-  .col-lg-6.mx-auto 
+  .col-sm-8.mx-auto 
     = form_with model: @running_record, local: true do |f|
       .row.mb-3
-        = f.label :date, class: 'col-sm-6'
-        .col-sm-6.d-sm-flex
+        = f.label :date, class: 'col-5'
+        .col-7.d-flex.mx-auto
           = f.date_select :date, { use_month_numbers: true },\
            { class: 'form-control', style: 'display: inline-block;width: auto;' }
       .row.mb-3
-        = f.label :time, class: 'col-sm-6'
-        .col-sm-6.d-flex
+        = f.label :time, class: 'col-5'
+        .col-7.d-flex.mx-auto
           = f.text_field :running_hour, class: 'form-control', placeholder: 'hh'
           | 時間　
           = f.text_field :running_minute, class: 'form-control', placeholder: 'mm'
@@ -18,28 +18,28 @@
           = f.text_field :running_second, class: 'form-control', placeholder: 'ss'
           | 秒
       .row.mb-3
-        = f.label :running_distance, class: 'col-sm-6'
-        .col-sm-2.d-flex
+        = f.label :running_distance, class: 'col-5'
+        .col-7.d-flex.mx-auto
           = f.text_field :running_distance, class: 'form-control'
           |  km
       .row.mb-3
-        = f.label :intensity, class: 'col-sm-6'
-        .col-sm-6.d-sm-flex
+        = f.label :intensity, class: 'col-5'
+        .col-7.d-flex.mx-auto
           = f.select :intensity, RunningRecord.intensities_i18n.invert, class: 'form-select'
           = render 'shared/modal'
       .row.mb-3
-        = f.label :freq, class: 'col-sm-6'
-        .col-sm-2.d-flex
+        = f.label :freq, class: 'col-5'
+        .col-7.d-flex.mx-auto
           = f.text_field :freq, class: 'form-control'
           |  本 
       p.text-secondary ※練習強度が「E/M/T」のとき、本数は1にしてください
       .row.mb-3
-        = f.label :status, class: 'col-sm-6'
-        .col-sm-6.d-sm-flex
+        = f.label :status, class: 'col-5'
+        .col-7.d-flex.mx-auto
           = f.select :status, RunningRecord.statuses_i18n.invert, class: 'form-select'
       p.text-secondary ※vdotグラフへの表示/非表示を指定します(練習強度「E/M/T」のみ)
       
-      .d-grid.gap-2.d-sm-flex.justify-content-sm-center.mb-5 
+      .d-grid.gap-2.d-flex.justify-content-center.mb-5 
         = f.submit t('defaults.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
 
