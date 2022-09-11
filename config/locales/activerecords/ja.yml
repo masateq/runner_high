@@ -39,6 +39,7 @@ ja:
         age: 年齢
         sex: 性別
         weight: 体重
+        running_distance: 走行距離
         running_time: 目標タイム
       running_record:
         id: ID
