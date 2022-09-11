@@ -8,7 +8,7 @@ class TrainingSuggestionsController < ApplicationController
   def create
     @training_suggestion = current_user.training_suggestions.build(training_suggestion_params)
     if @training_suggestion.save
-      @training_suggestion.update(freq: 1) if judge_intensity(@training_suggestion) # 強度がE/M/Tのときランニング本数は1固定
+      @training_suggestion.freq_limit
       redirect_to training_suggestions_path
       flash[:success] = t(".success")
     else
@@ -38,7 +38,7 @@ class TrainingSuggestionsController < ApplicationController
 
   def update
     if @training_suggestion.update(training_suggestion_params)
-      @training_suggestion.update(freq: 1) if judge_intensity(@training_suggestion) # 強度がE/M/Tのときランニング本数は1固定
+      @training_suggestion.freq_limit
       redirect_to training_suggestions_path
       flash[:success] = t('.success')
     else
