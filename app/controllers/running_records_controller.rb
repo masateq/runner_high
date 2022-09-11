@@ -22,7 +22,7 @@ class RunningRecordsController < ApplicationController
   def create
     @running_record = current_user.running_records.build(running_record_params)
     if @running_record.save
-      @running_record.update(freq: 1) if judge_intensity(@running_record) # 強度がE/M/Tのときランニング本数は1固定
+      @running_record.freq_limit
       redirect_to running_records_path
       flash[:success] = t(".success")
     else
@@ -44,7 +44,7 @@ class RunningRecordsController < ApplicationController
 
   def update
     if @running_record.update(running_record_params)
-      @running_record.update(freq: 1) if judge_intensity(@running_record) # 強度がE/M/Tのときランニング本数は1固定
+      @running_record.freq_limit
       redirect_to running_records_path
       flash[:success] = t('.success')
     else

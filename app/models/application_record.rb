@@ -35,5 +35,15 @@ class ApplicationRecord < ActiveRecord::Base
   def calc_calorie
     self.user.weight.present? ? mets * self.user.weight * convert_minute / 60 * 1.05 : nil
   end
+
+  # 強度がE/M/Tのときランニング本数は1固定
+  def freq_limit
+    self.update(freq: 1) if judge_intensity(self)
+  end
+
+  #強度がE//M/Tかどうか判定
+  def judge_intensity(record)
+    record.intensity == 'E'|| record.intensity == 'M'|| record.intensity == 'T'
+  end
   
 end
