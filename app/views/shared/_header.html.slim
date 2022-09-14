@@ -1,7 +1,15 @@
 header#header
-  h1
-    = link_to root_path do
-      i.fas.fa-running.fa-2x style="color: white;"
+  .dropdown 
+    .menu 
+      .menu-title 
+        h5 メニュー一覧
+      .sub-menu 
+        ul 
+          li = link_to 'ユーザー情報'
+          li = link_to 'ランニング記録入力'
+          li = link_to 'ランニング記録一覧'
+          li = link_to 'トレーニング編集'
+          li = link_to 'アプリの使い方'
   h1 Runner's High
   nav 
     ul#g-navi 

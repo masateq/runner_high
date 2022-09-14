@@ -40,3 +40,48 @@ nav ul li.current a,
 nav ul li a:hover{
 	color:#fff;	
 }
+
+/* 以下ドロップダウンメニュー用 */
+.dropdown {
+  display: flex;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu-title {
+  padding: 0.5em;
+  color: #fff;
+}
+
+.sub-menu {
+  display: none;
+  background: #28BFE7;
+  position: absolute;
+}
+
+.sub-menu > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 20vw;
+}
+
+.sub-menu > ul > li {
+  padding: 0.5em;
+}
+
+.sub-menu > ul > li:hover {
+  background:#448ED3;
+}
+
+
+.sub-menu > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu:hover .sub-menu {
+  display: inline-block;
+}
