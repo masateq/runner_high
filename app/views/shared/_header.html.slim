@@ -2,10 +2,11 @@ header#header
   .dropdown 
     .menu 
       .menu-title 
-        h5 メニュー一覧
+        h6 メニュー一覧
       .sub-menu 
         ul 
-          li = link_to 'ユーザー情報', edit_user_path(@user)
+          -if @user
+            li = link_to 'ユーザー情報', edit_user_path(@user)
           li = link_to 'ランニング記録入力', new_running_record_path
           li = link_to 'ランニング記録一覧', running_records_path
           li
