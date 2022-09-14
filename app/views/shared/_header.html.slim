@@ -5,11 +5,11 @@ header#header
         h5 メニュー一覧
       .sub-menu 
         ul 
-          li = link_to 'ユーザー情報'
-          li = link_to 'ランニング記録入力'
-          li = link_to 'ランニング記録一覧'
-          li = link_to 'トレーニング編集'
-          li = link_to 'アプリの使い方'
+          li = link_to 'ユーザー情報', edit_user_path(@user)
+          li = link_to 'ランニング記録入力', new_running_record_path
+          li = link_to 'ランニング記録一覧', running_records_path
+          li = link_to 'トレーニング編集', edit_training_suggestions_path
+          li = link_to 'アプリの使い方', tutorial_path
   h1 Runner's High
   nav 
     ul#g-navi 
