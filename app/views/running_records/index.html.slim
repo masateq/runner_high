@@ -24,7 +24,7 @@
     .card.bg-light-dark.mb-4
       .card-body
         h4.card-title
-          = link_to "Date: #{running_record.date}　Distance: #{running_record.running_distance * running_record.freq} km　Intensity: #{running_record.intensity}",\
+          = link_to "日付: #{running_record.date}　距離: #{running_record.running_distance * running_record.freq} km　強度: #{running_record.intensity}",\
            edit_running_record_path(running_record), class: "mx-4"
           = link_to "削除",running_record_path(running_record), method: :delete, data: { confirm: "トレーニング記録を削除します。よろしいですか？"}, class: "btn btn-danger"
 
