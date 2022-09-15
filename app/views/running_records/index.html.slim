@@ -1,11 +1,30 @@
 - content_for(:title, t('.index_record'))
-.px-4.pt-5.my-5.text-center.border-bottom.fw-bold 
+.container.pt-5
+  .display-5.fst-italic.my-3
+      .table-responsive
+          table.table
+            tr
+              th scope='col' 月間トレーニング数
+              td = @month_records.count
+              td
+                - if @month_records.count >= 15
+                  i.fas.fa-crown.px-2 style="color: #DBB400;"
+                - elsif @month_records.count >= 10
+                  i.fas.fa-crown.px-2 style="color: #C9CACA;"
+                - elsif @month_records.count >= 5
+                  i.fas.fa-crown.px-2 style="color: #C47022;"
+            tr
+              th scope='col' 月間走行距離
+              td = "#{@month_records.map{|dist| dist.running_distance * dist.freq}.sum.round(2)} km"
+              td
+
+.px-4.my-5.text-center.border-bottom.fw-bold 
   h1.display-4.fst-italic = t('.index_record')
   - @running_records.each do |running_record|
     .card.bg-light-dark.mb-4
       .card-body
         h4.card-title
-          = link_to "Date: #{running_record.date}　Distance: #{running_record.running_distance * running_record.freq} km　Intensity: #{running_record.intensity}",\
+          = link_to "日付: #{running_record.date}　距離: #{running_record.running_distance * running_record.freq} km　強度: #{running_record.intensity}",\
            edit_running_record_path(running_record), class: "mx-4"
           = link_to "削除",running_record_path(running_record), method: :delete, data: { confirm: "トレーニング記録を削除します。よろしいですか？"}, class: "btn btn-danger"
 

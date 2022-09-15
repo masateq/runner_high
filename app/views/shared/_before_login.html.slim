@@ -1,10 +1,16 @@
 header#header
-  h1
-    = link_to root_path do
-      i.fa-solid.fa-person-running.fa-2x style="color: white;"
+  .dropdown 
+    .menu 
+      .menu-title 
+        h5 メニュー一覧
+      .sub-menu 
+        ul 
+          li = link_to 'トップページ', start_path
+          li = link_to '新規登録', new_user_path
+          li = link_to 'ログイン', login_path
+          li = link_to 'アプリの使い方', tutorial_path
   nav 
     ul#g-navi 
       li =link_to 'login', login_path
           
     = javascript_pack_tag 'header', 'data-turbolinks-track': 'reload'
-    = stylesheet_pack_tag 'header', 'data-turbolinks-track': 'reload'
