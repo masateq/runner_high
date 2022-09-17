@@ -47,7 +47,7 @@ class RunningRecordsController < ApplicationController
       render :edit
     else
       flash[:danger] = t('defaults.unpermitted')
-      redirect_to root_path
+      redirect_to running_records_path
     end
   end
 

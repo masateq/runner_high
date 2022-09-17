@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "top_pages#top"
   resources :users, only: %i[new create edit update]
   resources :running_records, only: %i[new create edit index update destroy]
   resource :training_suggestions, only: %i[new create show edit update]
