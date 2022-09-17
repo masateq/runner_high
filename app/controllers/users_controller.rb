@@ -24,13 +24,13 @@ class UsersController < ApplicationController
       render :edit
     else
       flash[:danger] = t('defaults.unpermitted')
-      redirect_to root_path
+      redirect_to running_records_path
     end
   end
 
   def update
     if @user.update(user_update_params)
-      redirect_to root_path
+      redirect_to running_records_path
       flash[:success] = t(".success")
     else
       flash.now[:danger] = t(".fail")
