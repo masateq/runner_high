@@ -18,7 +18,7 @@
               td = "#{@month_records.map{|dist| dist.running_distance * dist.freq}.sum.round(2)} km"
               td
 
-.px-4.my-5.text-center.border-bottom.fw-bold 
+.px-4.my-5.text-center.border-bottom.fw-bold
   h1.display-4.fst-italic = t('.index_record')
   - @running_records.each do |running_record|
     .card.bg-light-dark.mb-4
@@ -26,21 +26,21 @@
         h4.card-title
           = link_to "日付: #{running_record.date}　距離: #{running_record.running_distance * running_record.freq} km　強度: #{running_record.intensity}",\
            edit_running_record_path(running_record), class: "mx-4"
-          = link_to "削除",running_record_path(running_record), method: :delete, data: { confirm: "トレーニング記録を削除します。よろしいですか？"}, class: "btn btn-danger"
+          = link_to "削除", running_record_path(running_record), method: :delete, data: {confirm: "トレーニング記録を削除します。よろしいですか？"}, class: "btn btn-danger"
 
 canvas#myChart
 a
   #one_month.btn.bgleft href='#'
     span 1ヶ月
 a
-  #three_months.btn.bgleft href='#' 
+  #three_months.btn.bgleft href='#'
     span 3ヶ月
 a
-  #six_months.btn.bgleft href='#' 
+  #six_months.btn.bgleft href='#'
     span 6ヶ月
 a
-  #one_year.btn.bgleft href='#' 
-    span 年   
+  #one_year.btn.bgleft href='#'
+    span 年
 
 = paginate @running_records, theme: 'bootstrap-5'
 

@@ -1,25 +1,24 @@
 header#header
-  .dropdown 
-    .menu 
-      .menu-title 
+  .dropdown
+    .menu
+      .menu-title
         h5 メニュー一覧
-      .sub-menu 
-        ul 
+      .sub-menu
+        ul
           -if @user
             li = link_to t('.edit_user'), edit_user_path(@user)
           li = link_to t('.new_record'), new_running_record_path
           li = link_to t('.index_record'), running_records_path
           li
-            - if @training_suggestion.blank? 
+            - if @training_suggestion.blank?
               = link_to t('.new_training'), new_training_suggestions_path
             - else
               = link_to t('.edit_training'), edit_training_suggestions_path
           li = link_to t('.tutorial'), tutorial_path
   h1 Runner's High
-  nav 
-    ul#g-navi 
-      li =link_to 'logout', logout_path, method: :delete
-          
+  nav
+    ul#g-navi
+      li = link_to 'logout', logout_path, method: :delete
+
     = javascript_pack_tag 'header', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'header', media: 'all', 'data-turbolinks-track': 'reload'
- 

@@ -1,8 +1,8 @@
 - content_for(:title, t('.new_user'))
-.px-4.pt-5.text-center.border-bottom.fw-bold 
+.px-4.pt-5.text-center.border-bottom.fw-bold
   h1.display-4.fst-italic = t('.new_user')
-  .col-lg-6.mx-auto 
-    = form_with model:@user, local: true do |f|
+  .col-lg-6.mx-auto
+    = form_with model: @user, local: true do |f|
       .row.mb-3
         = f.label :name, class: 'col-sm-6'
         .col-sm-6.d-flex
@@ -15,9 +15,9 @@
         = f.label :password, class: 'col-sm-6'
         .col-sm-6.d-flex
           = f.password_field :password, class: 'form-control'
-      .row.mb-3 
+      .row.mb-3
         = f.label :password_confirmation, class: 'col-sm-6'
         .col-sm-6.d-flex
           = f.password_field :password_confirmation, class: 'form-control'
-      .d-sm-flex.justify-content-sm-center.mb-5 
+      .d-sm-flex.justify-content-sm-center.mb-5
         =f.submit t('defaults.registration'), class: 'btn btn-outline-primary btn-lg px-4'
