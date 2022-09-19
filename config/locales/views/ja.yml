@@ -6,11 +6,24 @@ ja:
     unpermitted: 許可されていないページです
     delete: 削除
     registration: 登録
+  
+  shared:
+    before_login:
+      start: トップページ
+      new_user: 新規登録
+      tutorial: アプリの使い方
+
+    header:
+      edit_user: ユーザー情報
+      new_record: ランニング記録入力
+      index_record: ランニング記録一覧
+      new_training: トレーニング作成
+      edit_training: トレーニング編集
+      tutorial: アプリの使い方
     
   users:
     new:
       new_user: 新規登録
-      top: トップページへ
     create:
       success: ユーザー登録が完了しました
       fail: ユーザー登録に失敗しました
@@ -26,7 +39,6 @@ ja:
       email: メールアドレス
       password: パスワード
       registration: ユーザー登録
-      top: トップページへ
     create:
       success: ログインしました
       fail: ログインに失敗しました
@@ -39,9 +51,6 @@ ja:
       runners_high: Runner's High
       registration: 新規登録
       login: ログイン
-      tutorial: アプリの使い方
-    top:
-      menu: メニュー
       tutorial: アプリの使い方
 
   running_records:

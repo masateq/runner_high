@@ -2,19 +2,19 @@ header#header
   .dropdown 
     .menu 
       .menu-title 
-        h6 メニュー一覧
+        h5 メニュー一覧
       .sub-menu 
         ul 
           -if @user
-            li = link_to 'ユーザー情報', edit_user_path(@user)
-          li = link_to 'ランニング記録入力', new_running_record_path
-          li = link_to 'ランニング記録一覧', running_records_path
+            li = link_to t('.edit_user'), edit_user_path(@user)
+          li = link_to t('.new_record'), new_running_record_path
+          li = link_to t('.index_record'), running_records_path
           li
             - if @training_suggestion.blank? 
-              = link_to 'トレーニング作成', new_training_suggestions_path
+              = link_to t('.new_training'), new_training_suggestions_path
             - else
-              = link_to 'トレーニング編集', edit_training_suggestions_path
-          li = link_to 'アプリの使い方', tutorial_path
+              = link_to t('.edit_training'), edit_training_suggestions_path
+          li = link_to t('.tutorial'), tutorial_path
   h1 Runner's High
   nav 
     ul#g-navi 
