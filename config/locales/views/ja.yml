@@ -10,7 +10,6 @@ ja:
   users:
     new:
       new_user: 新規登録
-      top: トップページへ
     create:
       success: ユーザー登録が完了しました
       fail: ユーザー登録に失敗しました
@@ -26,7 +25,6 @@ ja:
       email: メールアドレス
       password: パスワード
       registration: ユーザー登録
-      top: トップページへ
     create:
       success: ログインしました
       fail: ログインに失敗しました
@@ -39,9 +37,6 @@ ja:
       runners_high: Runner's High
       registration: 新規登録
       login: ログイン
-      tutorial: アプリの使い方
-    top:
-      menu: メニュー
       tutorial: アプリの使い方
 
   running_records:
