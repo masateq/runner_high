@@ -1,5 +1,5 @@
 - content_for(:title, t('.edit_training'))
-.px-4.pt-5.text-center.border-bottom.fw-bold 
+.px-4.pt-5.text-center.border-bottom.fw-bold
   h1.display-4.fst-italic = t('.edit_training')
   p ランニング予定を入力してください
   .col-sm-8.mx-auto
@@ -18,21 +18,20 @@
         = f.label :freq, class: 'col-5'
         .col-7.d-flex.mx-auto
           = f.text_field :freq, class: 'form-control'
-          |  本 
+          |  本
       p.text-secondary ※練習強度が「E/M/T」のとき、本数は1にしてください
       .row.mb-3
         = f.label :adjust_intensity, class: 'col-5'
         .col-7.d-flex.mx-auto
           = f.number_field :adjust_intensity, class: 'form-control'
-      .d-grid.gap-2.d-flex.justify-content-center.mb-5 
+      .d-grid.gap-2.d-flex.justify-content-center.mb-5
         = f.submit t('.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
       table.table
         tr
           th scope='col' vdot
-          td = @training_suggestion.user.vdot.round(2)    
+          td = @training_suggestion.user.vdot.round(2)
 
   .overflow-hidden.jumbotron style='max-height: 30vh;'
     .container
       = image_tag "track.jpg", class: "img-fluid border rounded-3 shadow-lg mb-4", alt: "画像", loading: "lazy"
-

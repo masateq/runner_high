@@ -1,5 +1,5 @@
 - content_for(:title, t('.new_training'))
-.px-4.pt-5.text-center.border-bottom.fw-bold 
+.px-4.pt-5.text-center.border-bottom.fw-bold
   h1.display-4.fst-italic = t('.new_training')
   p ランニング予定を入力してください
   .col-sm-8.mx-auto
@@ -18,13 +18,13 @@
         = f.label :freq, class: 'col-5'
         .col-7.d-flex.mx-auto
           = f.text_field :freq, class: 'form-control'
-          |  本 
+          |  本
       p.text-secondary ※練習強度が「E/M/T」のとき、本数は1にしてください
       .row.mb-3
         = f.label :adjust_intensity, class: 'col-5'
         .col-7.d-flex.mx-auto
           = f.number_field :adjust_intensity, class: 'form-control'
-      .d-grid.gap-2.d-flex.justify-content-center.mb-5 
+      .d-grid.gap-2.d-flex.justify-content-center.mb-5
         = f.submit t('.registration'), class: 'btn btn-outline-primary btn-lg px-4 me-sm-3'
 
   .overflow-hidden style='max-height: 30vh;'

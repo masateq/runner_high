@@ -1,7 +1,7 @@
 - content_for(:title, t('defaults.login'))
-.px-4.pt-5.text-center.border-bottom.fw-bold 
+.px-4.pt-5.text-center.border-bottom.fw-bold
   h1.display-4.fst-italic = t('defaults.login')
-  .col-lg-6.mx-auto 
+  .col-lg-6.mx-auto
     = form_with url: login_path, local: true do |f|
       .row.mb-3
         = f.label t('.email'), class: 'col-sm-6'
@@ -11,5 +11,5 @@
         = f.label t('.password'), class: 'col-sm-6'
         .col-sm-6.d-flex
           = f.password_field :password, class: 'form-control'
-      .d-grid.gap-2.d-sm-flex.justify-content-sm-center.mb-5 
+      .d-grid.gap-2.d-sm-flex.justify-content-sm-center.mb-5
         = f.submit t('defaults.login'), class: 'btn btn-outline-primary btn-lg px-4'
