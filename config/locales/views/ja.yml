@@ -6,6 +6,20 @@ ja:
     unpermitted: 許可されていないページです
     delete: 削除
     registration: 登録
+  
+  shared:
+    before_login:
+      start: トップページ
+      new_user: 新規登録
+      tutorial: アプリの使い方
+
+    header:
+      edit_user: ユーザー情報
+      new_record: ランニング記録入力
+      index_record: ランニング記録一覧
+      new_training: トレーニング作成
+      edit_training: トレーニング編集
+      tutorial: アプリの使い方
     
   users:
     new:
