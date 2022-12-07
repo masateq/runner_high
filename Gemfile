@@ -41,10 +41,6 @@ gem 'gon', '~> 6.4'
 gem 'kaminari', '~> 1.2'
 gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 
-gem 'net-smtp'
-gem 'net-imap'
-gem 'net-pop'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
